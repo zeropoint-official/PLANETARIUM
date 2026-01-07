@@ -186,9 +186,9 @@ export function ParallaxHero() {
   }, []);
 
   return (
-    <div ref={parallaxRef} className="relative w-full">
+    <div ref={parallaxRef} className="relative w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[120vh] min-h-[800px] w-full overflow-hidden bg-[#030308]">
+      <section className="relative h-[120vh] min-h-[800px] w-full max-w-full overflow-hidden bg-[#030308]">
         <div className="relative w-full h-full">
           <div data-parallax-layers className="relative w-full h-full">
 
@@ -219,25 +219,25 @@ export function ParallaxHero() {
             {/* Layer 3: Title Content */}
             <div
               data-parallax-layer="3"
-              className="absolute z-[5] top-[12%] md:top-[18%] left-0 right-0 flex flex-col items-center will-change-transform px-6"
+              className="absolute z-[5] top-[12%] md:top-[18%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6 w-full max-w-full"
             >
-              <div className="max-w-4xl mx-auto text-center">
+              <div className="max-w-full w-full mx-auto text-center px-2">
                 {/* Pre-title */}
-                <div data-hero-pretitle className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
+                <div data-hero-pretitle className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[11px] font-semibold tracking-[0.2em] text-white/60 uppercase">
+                  <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-white/60 uppercase whitespace-nowrap">
                     Cyprus' Most Epic 2-Day Event
                   </span>
                 </div>
 
                 {/* Main Title */}
-                <h1 className="mb-8">
-                  <span data-hero-title-main className="block text-[clamp(3rem,11vw,8rem)] font-black tracking-[-0.03em] leading-[0.9] text-white">
+                <h1 className="mb-6 sm:mb-8 w-full">
+                  <span data-hero-title-main className="block text-[clamp(2.5rem,8vw,6rem)] sm:text-[clamp(3rem,9vw,7rem)] md:text-[clamp(3rem,11vw,8rem)] font-black tracking-[-0.02em] sm:tracking-[-0.03em] leading-[0.9] text-white text-center w-full break-words">
                     PLANETARIUM
                   </span>
                   <SparklesText
                     data-hero-title-accent
-                    className="block text-[clamp(3rem,11vw,8rem)] font-black tracking-[-0.03em] leading-[0.9]"
+                    className="block text-[clamp(2.5rem,8vw,6rem)] sm:text-[clamp(3rem,9vw,7rem)] md:text-[clamp(3rem,11vw,8rem)] font-black tracking-[-0.02em] sm:tracking-[-0.03em] leading-[0.9] text-center w-full break-words"
                     sparklesCount={8}
                     colors={{ first: '#a855f7', second: '#22d3ee' }}
                   >
@@ -251,17 +251,17 @@ export function ParallaxHero() {
                 </h1>
 
                 {/* Tagline */}
-                <p data-hero-tagline className="text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-12 leading-relaxed text-white/40 tracking-wide">
+                <p data-hero-tagline className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-8 sm:mb-12 leading-relaxed text-white/40 tracking-wide px-2">
                   Join Cyprus' most epic celebration — two days of music, art, and unforgettable experiences
                 </p>
 
                 {/* Ticket CTA with Magic UI ShimmerButton */}
-                <div data-hero-cta className="flex flex-col items-center mb-20">
+                <div data-hero-cta className="flex flex-col items-center mb-16 sm:mb-20 relative z-10">
                   <div className="relative">
                     {/* Counter badge on top */}
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm">
                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
+                      <span className="text-[9px] sm:text-[10px] text-white/50 font-medium tracking-[0.12em] sm:tracking-[0.15em] uppercase">
                         30 days left
                       </span>
                     </div>
@@ -273,9 +273,9 @@ export function ParallaxHero() {
                       shimmerSize="0.08em"
                       background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
                     >
-                      <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-pre-wrap tracking-wide">
+                      <span className="flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-medium text-white/90 whitespace-nowrap tracking-wide px-4 sm:px-6">
                         Get Your Tickets
-                        <ArrowRight className="w-4 h-4 text-fuchsia-400/80" />
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fuchsia-400/80" />
                       </span>
                     </ShimmerButton>
                   </div>
@@ -293,16 +293,16 @@ export function ParallaxHero() {
             <div
               data-parallax-layer="4"
               data-hero-astronaut
-              className="absolute right-[5%] bottom-[15%] z-[6] will-change-transform pointer-events-none sm:right-[6%] sm:bottom-[12%] md:right-[7%] md:bottom-[6%] lg:right-[12%] lg:bottom-[10%]"
+              className="absolute right-[50%] translate-x-[50%] bottom-[10%] z-[4] will-change-transform pointer-events-none sm:right-[50%] sm:translate-x-[50%] sm:bottom-[8%] md:right-[7%] md:translate-x-0 md:bottom-[6%] lg:right-[12%] lg:bottom-[10%]"
             >
-              <div className="relative">
+              <div className="relative max-w-full">
                 {/* Glow behind astronaut */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[280px] sm:h-[280px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-t from-violet-600/20 via-cyan-500/10 to-transparent blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-t from-violet-600/20 via-cyan-500/10 to-transparent blur-3xl" />
 
                 <img
                   src="/austronaunt.png"
                   alt="Floating Astronaut"
-                  className="relative w-[180px] sm:w-[200px] md:w-[240px] lg:w-[320px] h-auto animate-float drop-shadow-2xl"
+                  className="relative w-[140px] sm:w-[160px] md:w-[240px] lg:w-[320px] h-auto animate-float drop-shadow-2xl max-w-full"
                 />
               </div>
             </div>
@@ -314,7 +314,7 @@ export function ParallaxHero() {
       </section>
 
       {/* Highlights Section - Seamless continuation */}
-      <section className="relative z-10 -mt-20 pt-8 pb-80 px-6">
+      <section className="relative z-10 -mt-20 pt-8 pb-80 px-4 sm:px-6 w-full max-w-full overflow-x-hidden">
         {/* Background that fades out very smoothly */}
         <div className="absolute inset-x-0 top-0 bottom-[400px] bg-[#030308]" />
         <div className="absolute inset-x-0 bottom-0 h-[450px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, #030308 0%, rgba(3,3,8,0.8) 25%, rgba(3,3,8,0.5) 50%, rgba(3,3,8,0.2) 75%, transparent 100%)' }} />

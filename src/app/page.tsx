@@ -247,7 +247,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative">
+    <main className="relative w-full max-w-full overflow-x-hidden">
       {/* Existing Parallax Hero - higher z-index to stay above background */}
       <div className="relative z-20">
         <ParallaxHero />
