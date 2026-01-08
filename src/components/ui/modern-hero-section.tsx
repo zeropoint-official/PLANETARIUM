@@ -13,7 +13,7 @@ interface HeroCollageProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 't
 }
 
 const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
-  ({ className, title, subtitle, stats, images, accentColor = 'text-violet-500', ...props }, ref) => {
+  ({ className, title, subtitle, stats, images, accentColor = 'text-amber-500', ...props }, ref) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const displayImages = images.slice(0, 7);
 
@@ -41,18 +41,18 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
       >
         {/* Ambient glow effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-[150px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Floating Image Grid - Left Side */}
         <div className="absolute left-0 top-0 h-full w-1/3 overflow-hidden">
-          <motion.div
+          <motion.div 
             style={{ y: y1, rotate: rotate1 }}
             className="absolute top-[15%] left-[10%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
               <img
                 src={displayImages[1]}
                 alt="Activity"
@@ -60,13 +60,13 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
               />
             </div>
           </motion.div>
-
-          <motion.div
+          
+          <motion.div 
             style={{ y: y2 }}
             className="absolute top-[45%] left-[5%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[5]}
                 alt="Activity"
@@ -75,12 +75,12 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             </div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
             style={{ y: y3, rotate: rotate2 }}
             className="absolute bottom-[15%] left-[15%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[6]}
                 alt="Activity"
@@ -92,12 +92,12 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
 
         {/* Floating Image Grid - Right Side */}
         <div className="absolute right-0 top-0 h-full w-1/3 overflow-hidden">
-          <motion.div
+          <motion.div 
             style={{ y: y2, rotate: rotate2 }}
             className="absolute top-[20%] right-[10%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
               <img
                 src={displayImages[2]}
                 alt="Activity"
@@ -106,12 +106,12 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             </div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
             style={{ y: y1 }}
             className="absolute top-[50%] right-[5%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-violet-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[3]}
                 alt="Activity"
@@ -120,12 +120,12 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             </div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
             style={{ y: y3, rotate: rotate1 }}
             className="absolute bottom-[20%] right-[15%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[4]}
                 alt="Activity"
@@ -136,7 +136,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
         </div>
 
         {/* Center Content */}
-        <motion.div
+        <motion.div 
           style={{ scale, opacity }}
           className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] px-4"
         >
@@ -148,9 +148,9 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             viewport={{ once: true }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 backdrop-blur-sm">
-              <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-xs font-medium text-violet-400 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 backdrop-blur-sm">
+              <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-xs font-medium text-amber-400 uppercase tracking-wider">
                 10AM — 6PM Daily
               </span>
             </div>
@@ -186,14 +186,14 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             viewport={{ once: true }}
             className="relative mb-16"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 rounded-3xl blur-2xl opacity-30" />
-            <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-2xl opacity-60" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur-2xl opacity-30" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl opacity-60" />
             <img
               src={displayImages[0]}
               alt="Featured Activity"
               className="relative w-[400px] md:w-[500px] h-[250px] md:h-[300px] object-cover rounded-2xl"
             />
-
+            
             {/* Floating stat cards on the image */}
             <div className="absolute -bottom-6 -left-6 px-4 py-3 bg-black/80 backdrop-blur-xl rounded-xl border border-white/10">
               <div className={cn("text-2xl font-bold", accentColor)}>{stats[0]?.value}</div>

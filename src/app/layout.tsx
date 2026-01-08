@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Urbanist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description: "Join us for an unforgettable night under the stars at Cyprus Planetarium. Experience live telescope observations, immersive dome shows, and expert talks about the cosmos.",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
+export const viewport = {
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased font-sans overflow-x-hidden`}
+        className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased font-sans`}
       >
         {children}
       </body>

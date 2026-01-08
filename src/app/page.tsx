@@ -7,11 +7,10 @@ import InteractiveImageBentoGallery from '@/components/ui/bento-gallery';
 import { OfferCarousel, type Offer } from '@/components/ui/offer-carousel';
 import { AnimatedHikeCard, type Stat } from '@/components/ui/card-25';
 import { AnimatedBackground } from '@/components/ui/animated-background';
-import { ScrollFlyIn } from '@/components/ui/hero-section-3';
-import { Timeline } from '@/components/ui/timeline';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
-import { Clock, Users, Music, Trophy, Telescope, Gamepad2, Gift, ShoppingBag, Sparkles, Star, PartyPopper, Rocket } from 'lucide-react';
+import { Timeline } from '@/components/ui/timeline';
+import { Clock, Users, Music, Trophy, Telescope, Gamepad2, Gift, ShoppingBag } from 'lucide-react';
 
 export default function Home() {
   // Daytime Activities Section Data
@@ -36,6 +35,237 @@ export default function Home() {
     'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
     // Far-Left: Food & drinks
     'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&auto=format&fit=crop&q=80',
+  ];
+
+  // Event Timeline Data
+  const timelineData = [
+    {
+      title: "Day 1 - Morning",
+      content: (
+        <div>
+          <p className="text-white/70 text-xs md:text-sm font-normal mb-8">
+            Kick off your cosmic journey with immersive experiences and interactive activities
+          </p>
+          <div className="space-y-4 mb-8">
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Clock className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">10:00 AM - Welcome & Registration</div>
+                <div className="text-white/60">Check-in and receive your event pass</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Telescope className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">10:30 AM - Telescope Viewing Session</div>
+                <div className="text-white/60">Observe planets and stars with professional telescopes</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Gamepad2 className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">11:00 AM - VR Space Adventures</div>
+                <div className="text-white/60">Immersive virtual reality space exploration</div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&q=80"
+              alt="Telescope viewing"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1593508512255-86ab42a0e620?w=800&q=80"
+              alt="VR experience"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&q=80"
+              alt="Interactive exhibit"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
+              alt="Workshop"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Day 1 - Afternoon",
+      content: (
+        <div>
+          <p className="text-white/70 text-xs md:text-sm font-normal mb-8">
+            Continue exploring with workshops, games, and exclusive daytime events
+          </p>
+          <div className="space-y-4 mb-8">
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Users className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">2:00 PM - Interactive Workshops</div>
+                <div className="text-white/60">Learn about space science and astronomy</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Trophy className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">3:30 PM - Cosmic Games & Contests</div>
+                <div className="text-white/60">Compete in space trivia and win prizes</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <ShoppingBag className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">5:00 PM - Shopping & Food Zone</div>
+                <div className="text-white/60">Browse exclusive merchandise and enjoy cosmic cuisine</div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+              alt="Contests"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80"
+              alt="Games"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+              alt="Shopping"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
+              alt="Food"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Day 1 - Evening",
+      content: (
+        <div>
+          <p className="text-white/70 text-xs md:text-sm font-normal mb-8">
+            As night falls, the festival transforms into an epic celebration under the stars
+          </p>
+          <div className="space-y-4 mb-8">
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Telescope className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">7:00 PM - Night Telescope Session</div>
+                <div className="text-white/60">Stargazing with expert astronomers</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Music className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">9:00 PM - DJ Party Night</div>
+                <div className="text-white/60">Dance under the stars with cosmic beats (18+)</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Gift className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">11:00 PM - Midnight Giveaways</div>
+                <div className="text-white/60">Win exclusive prizes and merchandise</div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
+              alt="DJ party"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
+              alt="Planetarium dome"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80"
+              alt="Night event"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1501281668745-f7f57525c1b4?w=800&q=80"
+              alt="Celebration"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Day 2 - Full Day",
+      content: (
+        <div>
+          <p className="text-white/70 text-xs md:text-sm font-normal mb-8">
+            Experience all activities again with new surprises, extended hours, and special finale events
+          </p>
+          <div className="space-y-4 mb-8">
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Clock className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">10:00 AM - Day 2 Kickoff</div>
+                <div className="text-white/60">All activities resume with new experiences</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Trophy className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">3:00 PM - Grand Finale Contests</div>
+                <div className="text-white/60">Final competitions with major prizes</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Music className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">8:00 PM - Closing Celebration</div>
+                <div className="text-white/60">Final night party with special performances</div>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
+              <Gift className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-white">10:00 PM - Final Giveaways</div>
+                <div className="text-white/60">Last chance to win amazing prizes</div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80"
+              alt="Activities"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80"
+              alt="Prizes"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
+              alt="Planetarium"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80"
+              alt="Finale"
+              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
+            />
+          </div>
+        </div>
+      ),
+    },
   ];
 
   // Onboarding Checklist Data
@@ -247,9 +477,9 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full max-w-full overflow-x-hidden">
+    <main className="relative w-full overflow-x-hidden">
       {/* Existing Parallax Hero - higher z-index to stay above background */}
-      <div className="relative z-20">
+      <div className="relative z-20 w-full overflow-x-hidden">
         <ParallaxHero />
       </div>
 
@@ -257,19 +487,19 @@ export default function Home() {
       <AnimatedBackground />
 
       {/* All sections after hero - content scrolls over fixed background */}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full overflow-x-hidden">
         {/* Daytime Activities Section */}
         <HeroCollage
           title={
             <>
               <span className="block text-white">Daytime</span>
-              <SparklesText
+              <SparklesText 
                 className="block"
                 sparklesCount={6}
-                colors={{ first: '#a855f7', second: '#22d3ee' }}
+                colors={{ first: '#f59e0b', second: '#fbbf24' }}
               >
                 <AuroraText
-                  colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                  colors={['#f59e0b', '#fbbf24', '#fcd34d', '#f59e0b']}
                   speed={1.0}
                 >
                   Adventures
@@ -280,203 +510,13 @@ export default function Home() {
           subtitle="From sunrise to sunset, explore immersive VR experiences, interactive workshops, telescope observations, cosmic games, and exclusive daytime events. Discover the universe in a whole new light."
           stats={daytimeStats}
           images={daytimeImages}
-          accentColor="text-violet-500"
+          accentColor="text-amber-500"
         />
 
-        {/* Scroll Fly-In Section with Plane */}
-        <div className="w-full text-foreground">
-          <ScrollFlyIn
-            imageUrl="/plane.png"
-            imageAlt="Plane flying across the screen"
-          >
-            <div className="max-w-3xl mx-auto px-4 text-center">
-              <p className="text-md font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-                Join the Journey
-              </p>
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight mt-2 text-white">
-                Where adventures take flight
-              </h2>
-            </div>
-          </ScrollFlyIn>
+        {/* Event Timeline */}
+        <div className="w-full">
+          <Timeline data={timelineData} />
         </div>
-
-        {/* Event Timeline Section */}
-        <section className="w-full py-16">
-          <Timeline
-            title="Event Schedule"
-            subtitle="Two days of non-stop entertainment, activities, and cosmic experiences. Here's what awaits you at the Planetarium Festival."
-            data={[
-              {
-                title: "Day 1 Morning",
-                content: (
-                  <div>
-                    <p className="text-white/70 text-sm md:text-base font-normal mb-6">
-                      Kick off your cosmic adventure with hands-on activities and immersive experiences
-                    </p>
-                    <div className="mb-6 space-y-3">
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                          <Rocket className="w-4 h-4 text-violet-400" />
-                        </div>
-                        <span>10:00 AM — Gates Open & Welcome Show</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-fuchsia-500/20 flex items-center justify-center">
-                          <Gamepad2 className="w-4 h-4 text-fuchsia-400" />
-                        </div>
-                        <span>11:00 AM — VR Space Exploration Opens</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                          <Telescope className="w-4 h-4 text-cyan-400" />
-                        </div>
-                        <span>12:00 PM — Solar Observation Session</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&q=80"
-                        alt="VR Experience"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                      <img
-                        src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&q=80"
-                        alt="Telescope"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                title: "Day 1 Afternoon",
-                content: (
-                  <div>
-                    <p className="text-white/70 text-sm md:text-base font-normal mb-6">
-                      Interactive workshops, contests, and entertainment for all ages
-                    </p>
-                    <div className="mb-6 space-y-3">
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                          <Trophy className="w-4 h-4 text-amber-400" />
-                        </div>
-                        <span>2:00 PM — Space Trivia Championship</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                          <Users className="w-4 h-4 text-emerald-400" />
-                        </div>
-                        <span>3:30 PM — Kids Space Academy Workshop</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                          <Gift className="w-4 h-4 text-orange-400" />
-                        </div>
-                        <span>5:00 PM — Giveaway & Prize Draw</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
-                        alt="Contest"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                      <img
-                        src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80"
-                        alt="Games"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                title: "Day 1 Night",
-                content: (
-                  <div>
-                    <p className="text-white/70 text-sm md:text-base font-normal mb-6">
-                      As the sun sets, the real party begins under the stars
-                    </p>
-                    <div className="mb-6 space-y-3">
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                          <Star className="w-4 h-4 text-violet-400" />
-                        </div>
-                        <span>7:00 PM — Stargazing Session Opens</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-pink-500/20 flex items-center justify-center">
-                          <Music className="w-4 h-4 text-pink-400" />
-                        </div>
-                        <span>9:00 PM — DJ Night Party Begins</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                          <Sparkles className="w-4 h-4 text-blue-400" />
-                        </div>
-                        <span>11:00 PM — Cosmic Light Show</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
-                        alt="DJ Party"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                      <img
-                        src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
-                        alt="Night Sky"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                    </div>
-                  </div>
-                ),
-              },
-              {
-                title: "Day 2",
-                content: (
-                  <div>
-                    <p className="text-white/70 text-sm md:text-base font-normal mb-6">
-                      The grand finale with exclusive experiences and closing ceremonies
-                    </p>
-                    <div className="mb-6 space-y-3">
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                          <Telescope className="w-4 h-4 text-cyan-400" />
-                        </div>
-                        <span>10:00 AM — Special Dome Shows</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                          <Trophy className="w-4 h-4 text-violet-400" />
-                        </div>
-                        <span>2:00 PM — Grand Prize Ceremony</span>
-                      </div>
-                      <div className="flex gap-3 items-center text-white/60 text-sm md:text-base">
-                        <div className="w-8 h-8 rounded-lg bg-fuchsia-500/20 flex items-center justify-center">
-                          <PartyPopper className="w-4 h-4 text-fuchsia-400" />
-                        </div>
-                        <span>6:00 PM — Closing Celebration</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80"
-                        alt="Space Show"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                      <img
-                        src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80"
-                        alt="Celebration"
-                        className="rounded-xl object-cover h-32 md:h-44 w-full border border-white/10"
-                      />
-                    </div>
-                  </div>
-                ),
-              },
-            ]}
-          />
-        </section>
 
         {/* Onboarding Checklist */}
         <section className="w-full flex items-center justify-center p-4 py-16">

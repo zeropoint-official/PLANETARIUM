@@ -52,7 +52,7 @@ const OfferCard = React.forwardRef<HTMLAnchorElement, OfferCardProps>(({ offer }
         <h3 className="text-xl font-bold text-card-foreground leading-tight">{offer.title}</h3>
         <p className="text-sm text-muted-foreground">{offer.description}</p>
       </div>
-
+      
       {/* Footer */}
       <div className="flex items-center justify-between pt-4 border-t border-border">
         <div className="flex items-center gap-3">
@@ -104,7 +104,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-
+        
         {/* Scrollable Container */}
         <div
           ref={scrollContainerRef}
@@ -114,7 +114,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
             <OfferCard key={offer.id} offer={offer} />
           ))}
         </div>
-
+        
         {/* Right Scroll Button */}
         <button
           onClick={() => scroll("right")}
