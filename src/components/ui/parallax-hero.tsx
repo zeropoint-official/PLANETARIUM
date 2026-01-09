@@ -148,14 +148,14 @@ export function ParallaxHero() {
                       <div className="flex flex-col items-center gap-2 relative z-10 animate-rotate-subtle" style={{ transformOrigin: 'left center' }}>
                         {/* Magic UI Shimmer Button */}
                         <ShimmerButton 
-                          className="shadow-2xl"
+                          className="shadow-2xl whitespace-nowrap"
                           shimmerColor="#a855f7"
                           shimmerSize="0.08em"
                           background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
                         >
-                          <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-pre-wrap tracking-wide">
+                          <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-nowrap tracking-wide">
                             Get Your Tickets
-                            <ArrowRight className="w-4 h-4 text-fuchsia-400/80" />
+                            <ArrowRight className="w-4 h-4 text-fuchsia-400/80 flex-shrink-0" />
                           </span>
                         </ShimmerButton>
                       </div>
@@ -186,14 +186,14 @@ export function ParallaxHero() {
                   <div className="hidden sm:flex flex-col items-center gap-2 relative z-10">
                     {/* Magic UI Shimmer Button */}
                     <ShimmerButton 
-                      className="shadow-2xl"
+                      className="shadow-2xl whitespace-nowrap"
                       shimmerColor="#a855f7"
                       shimmerSize="0.08em"
                       background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
                     >
-                      <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-pre-wrap tracking-wide">
+                      <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-nowrap tracking-wide">
                         Get Your Tickets
-                        <ArrowRight className="w-4 h-4 text-fuchsia-400/80" />
+                        <ArrowRight className="w-4 h-4 text-fuchsia-400/80 flex-shrink-0" />
                       </span>
                     </ShimmerButton>
                   </div>
