@@ -6,7 +6,7 @@ import { OnboardingChecklist } from '@/components/ui/onboarding-checklist';
 import InteractiveImageBentoGallery from '@/components/ui/bento-gallery';
 import { OfferCarousel, type Offer } from '@/components/ui/offer-carousel';
 import { AnimatedHikeCard, type Stat } from '@/components/ui/card-25';
-import { AnimatedBackground } from '@/components/ui/animated-background';
+import { CosmicBackground } from '@/components/ui/cosmic-background';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Timeline } from '@/components/ui/timeline';
@@ -483,8 +483,8 @@ export default function Home() {
         <ParallaxHero />
       </div>
 
-      {/* Fixed animated background with continuous movement, stars, and dark overlay */}
-      <AnimatedBackground />
+      {/* Fixed cosmic background with interactive particles */}
+      <CosmicBackground />
 
       {/* All sections after hero - content scrolls over fixed background */}
       <div className="relative z-10 w-full overflow-x-hidden">

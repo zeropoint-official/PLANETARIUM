@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
 
 const urbanist = Urbanist({
   variable: "--font-sans",
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${urbanist.variable} ${jetbrainsMono.variable} antialiased font-sans`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -56,7 +56,7 @@ export function ParallaxHero() {
   return (
     <div ref={parallaxRef} className="relative w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[800px] w-full overflow-hidden bg-[#030308]">
+      <section className="relative h-[500px] sm:h-screen sm:min-h-[700px] w-full overflow-hidden bg-[#030308]">
         <div className="relative w-full h-full overflow-hidden">
           <div data-parallax-layers className="relative w-full h-full overflow-hidden">
             
@@ -87,11 +87,11 @@ export function ParallaxHero() {
             {/* Layer 3: Title Content */}
             <div 
               data-parallax-layer="3" 
-              className="absolute z-[5] top-[18%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
+              className="absolute z-[5] top-[5%] sm:top-[15%] md:top-[18%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
                 {/* Pre-title */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-[9px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-white/60 uppercase">
                     Cyprus' Most Epic 2-Day Event
@@ -99,7 +99,7 @@ export function ParallaxHero() {
                 </div>
                 
                 {/* Main Title */}
-                <h1 className="mb-6 sm:mb-8 w-full">
+                <h1 className="mb-5 sm:mb-8 w-full">
                   <span className="block text-[clamp(2rem,8vw,6rem)] sm:text-[clamp(3rem,10vw,7rem)] font-black tracking-[-0.02em] sm:tracking-[-0.03em] leading-[0.9] text-white break-words">
                     PLANETARIUM
                   </span>
@@ -118,21 +118,72 @@ export function ParallaxHero() {
                 </h1>
                 
                 {/* Tagline */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-8 sm:mb-12 leading-relaxed text-white/40 tracking-wide px-2">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-5 sm:mb-12 leading-relaxed text-white/40 tracking-wide px-2">
                   Join Cyprus' most epic celebration — two days of music, art, and unforgettable experiences
                 </p>
                 
-                {/* Ticket CTA with Magic UI ShimmerButton */}
-                <div className="flex flex-col items-center mb-20">
-                  <div className="relative">
-                    {/* Counter badge on top */}
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm">
+                {/* Ticket CTA with Magic UI ShimmerButton - Mobile layout with astronaut */}
+                <div className="flex flex-col items-center mb-0 sm:mb-20 mt-8 sm:mt-0">
+                  {/* Counter badge on top - desktop only */}
+                  <div className="hidden sm:flex absolute -top-3 left-1/2 -translate-x-1/2 z-10 items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm animate-float-subtle">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
+                      30 days left
+                    </span>
+                  </div>
+                  
+                  {/* Mobile: Horizontal row with CTA and astronaut */}
+                  <div className="sm:hidden flex flex-col items-center justify-center gap-4 relative w-full mt-4">
+                    {/* Counter badge - mobile version with floating animation */}
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm z-10 animate-float-subtle">
                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
                         30 days left
                       </span>
                     </div>
                     
+                    {/* CTA and Astronaut Container */}
+                    <div className="flex items-center justify-center gap-2 relative w-full -mt-8">
+                      {/* CTA Button Container with rotation animation */}
+                      <div className="flex flex-col items-center gap-2 relative z-10 animate-rotate-subtle" style={{ transformOrigin: 'left center' }}>
+                        {/* Magic UI Shimmer Button */}
+                        <ShimmerButton 
+                          className="shadow-2xl"
+                          shimmerColor="#a855f7"
+                          shimmerSize="0.08em"
+                          background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
+                        >
+                          <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-pre-wrap tracking-wide">
+                            Get Your Tickets
+                            <ArrowRight className="w-4 h-4 text-fuchsia-400/80" />
+                          </span>
+                        </ShimmerButton>
+                      </div>
+                      
+                      {/* Mobile Astronaut - floating next to CTA */}
+                      <div className="relative w-[140px] h-[140px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
+                        {/* Enhanced glow for mobile */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
+                        
+                        <img
+                          src="/Untitled Design Multi-Design (1).png"
+                          alt="Cosmic Explorer"
+                          className="relative w-full h-full object-contain drop-shadow-2xl"
+                          style={{
+                            filter: 'drop-shadow(0 0 25px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 50px rgba(34, 211, 238, 0.4))'
+                          }}
+                        />
+                        
+                        {/* Decorative sparkles around mobile astronaut */}
+                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75" />
+                        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-fuchsia-400 rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }} />
+                        <div className="absolute top-1/2 -right-4 w-1.5 h-1.5 bg-violet-400 rounded-full animate-ping opacity-60" style={{ animationDelay: '1s' }} />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Desktop: CTA only */}
+                  <div className="hidden sm:flex flex-col items-center gap-2 relative z-10">
                     {/* Magic UI Shimmer Button */}
                     <ShimmerButton 
                       className="shadow-2xl"
@@ -156,19 +207,25 @@ export function ParallaxHero() {
               <ChevronDown className="w-5 h-5 animate-bounce" />
             </div>
 
-            {/* Layer 4: Astronaut */}
+
+            {/* Layer 4: Desktop Astronaut - hidden on mobile, right-aligned on desktop */}
             <div 
               data-parallax-layer="4" 
-              className="absolute right-[5%] sm:right-[5%] bottom-[8%] sm:bottom-[6%] z-[6] will-change-transform pointer-events-none lg:right-[12%] lg:bottom-[10%]"
+              className="hidden sm:block absolute z-[6] will-change-transform pointer-events-none
+                sm:right-[5%] sm:bottom-[6%]
+                lg:right-[10%] lg:bottom-[8%]"
             >
               <div className="relative">
-                {/* Glow behind astronaut */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-t from-violet-600/20 via-cyan-500/10 to-transparent blur-3xl" />
+                {/* Enhanced glow behind astronaut */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-t from-violet-600/30 via-cyan-500/20 to-fuchsia-500/15 blur-3xl animate-pulse" />
                 
                 <img
                   src="/austronaunt.png"
                   alt="Floating Astronaut"
-                  className="relative w-[160px] sm:w-[180px] md:w-[240px] lg:w-[320px] h-auto animate-float drop-shadow-2xl"
+                  className="relative w-[200px] md:w-[260px] lg:w-[320px] h-auto animate-float-enhanced drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 0 30px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 60px rgba(34, 211, 238, 0.3))'
+                  }}
                 />
               </div>
             </div>
@@ -176,11 +233,11 @@ export function ParallaxHero() {
         </div>
 
         {/* Extended gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#030308] via-[#030308]/80 to-transparent z-[7] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-[35%] sm:h-[40%] bg-gradient-to-t from-[#030308] via-[#030308]/80 to-transparent z-[7] pointer-events-none" />
       </section>
 
       {/* Highlights Section - Seamless continuation */}
-      <section className="relative z-10 pt-8 pb-80 px-6">
+      <section className="relative z-10 pt-8 pb-32 sm:pb-80 px-6">
         {/* Background that fades out very smoothly */}
         <div className="absolute inset-x-0 top-0 bottom-[400px] bg-[#030308]" />
         <div className="absolute inset-x-0 bottom-0 h-[450px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, #030308 0%, rgba(3,3,8,0.8) 25%, rgba(3,3,8,0.5) 50%, rgba(3,3,8,0.2) 75%, transparent 100%)' }} />
