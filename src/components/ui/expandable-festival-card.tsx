@@ -24,12 +24,8 @@ export const ExpandableFestivalCard = ({
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      // Set initial expanded state based on device type
-      if (!mobile) {
-        setIsExpanded(true); // Always expanded on desktop
-      } else {
-        setIsExpanded(false); // Start collapsed on mobile
-      }
+      // Always start collapsed
+      setIsExpanded(false);
       setIsInitialized(true);
     };
     checkMobile();
@@ -78,7 +74,11 @@ export const ExpandableFestivalCard = ({
       ref={cardRef}
       className={cn("w-full max-w-2xl mx-auto mb-16", className)}
     >
-      <Card className="overflow-hidden rounded-2xl border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm shadow-lg transition-all duration-300 hover:border-white/20">
+      <Card 
+        className="overflow-hidden rounded-2xl border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm shadow-lg transition-all duration-300 hover:border-white/20"
+        onMouseEnter={() => !isMobile && setIsExpanded(true)}
+        onMouseLeave={() => !isMobile && setIsExpanded(false)}
+      >
         <div className="p-6 md:p-8">
           {/* Header */}
           <div className="flex items-start justify-between mb-6">
@@ -93,14 +93,6 @@ export const ExpandableFestivalCard = ({
                 Discover the incredible experiences waiting for you
               </p>
             </div>
-            {/* Desktop hover trigger */}
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="hidden md:block text-white/40 hover:text-white/80 transition-colors"
-              aria-label="Toggle details"
-            >
-              <Sparkles className="w-5 h-5" />
-            </button>
           </div>
 
           {/* Feature icons */}

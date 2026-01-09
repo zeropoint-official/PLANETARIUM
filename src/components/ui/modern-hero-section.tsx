@@ -13,7 +13,7 @@ interface HeroCollageProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 't
 }
 
 const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
-  ({ className, title, subtitle, stats, images, accentColor = 'text-amber-500', ...props }, ref) => {
+  ({ className, title, subtitle, stats, images, accentColor = 'text-violet-500', ...props }, ref) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const displayImages = images.slice(0, 7);
 
@@ -41,8 +41,8 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
       >
         {/* Ambient glow effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-[150px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Floating Image Grid - Left Side - Hidden on mobile */}
@@ -52,7 +52,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute top-[15%] left-[10%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
               <img
                 src={displayImages[1]}
                 alt="Activity"
@@ -66,7 +66,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute top-[45%] left-[5%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[5]}
                 alt="Activity"
@@ -80,7 +80,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute bottom-[15%] left-[15%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[6]}
                 alt="Activity"
@@ -97,7 +97,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute top-[20%] right-[10%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
               <img
                 src={displayImages[2]}
                 alt="Activity"
@@ -111,7 +111,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute top-[50%] right-[5%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 to-violet-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[3]}
                 alt="Activity"
@@ -125,7 +125,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             className="absolute bottom-[20%] right-[15%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <img
                 src={displayImages[4]}
                 alt="Activity"
@@ -148,9 +148,9 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             viewport={{ once: true }}
             className="mb-6 md:mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-amber-500/10 border border-amber-500/20 backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-[10px] md:text-xs font-medium text-amber-400 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-violet-500/10 border border-violet-500/20 backdrop-blur-sm">
+              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-violet-400 animate-pulse" />
+              <span className="text-[10px] md:text-xs font-medium text-violet-400 uppercase tracking-wider">
                 10AM — 6PM Daily
               </span>
             </div>
@@ -190,7 +190,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
                   viewport={{ once: true }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500/50 to-orange-500/50 rounded-xl blur-sm opacity-40 group-hover:opacity-60 transition-opacity" />
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-violet-500/50 to-fuchsia-500/50 rounded-xl blur-sm opacity-40 group-hover:opacity-60 transition-opacity" />
                   <img
                     src={img}
                     alt={`Activity ${idx + 1}`}
@@ -209,8 +209,8 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
             viewport={{ once: true }}
             className="relative mb-8 md:mb-16 w-full max-w-[400px] md:max-w-[500px]"
           >
-            <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur-2xl opacity-30" />
-            <div className="absolute -inset-0.5 md:-inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl opacity-60" />
+            <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 rounded-3xl blur-2xl opacity-30" />
+            <div className="absolute -inset-0.5 md:-inset-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-2xl opacity-60" />
             <img
               src={displayImages[0]}
               alt="Featured Activity"

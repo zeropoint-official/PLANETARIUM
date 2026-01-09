@@ -9,6 +9,7 @@ import { AuroraText } from '@/components/ui/aurora-text';
 import { NumberTicker } from '@/components/ui/number-ticker';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { ExpandableFestivalCard } from '@/components/ui/expandable-festival-card';
+import { DestinationCard } from '@/components/ui/card-21';
 
 export function ParallaxHero() {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -335,62 +336,27 @@ export function ParallaxHero() {
             </div>
           </div>
 
-          {/* Day vs Night Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {/* Day Card */}
-            <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-amber-500/[0.06] to-orange-600/[0.03] border border-amber-500/[0.08] hover:border-amber-500/15 transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-400/15 to-transparent rounded-bl-full" />
-              
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 mb-5 rounded-full bg-amber-500/10 text-amber-400/90 text-[10px] font-semibold uppercase tracking-[0.15em]">
-                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  Daytime
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight" >
-                  Family Adventures
-                </h3>
-                
-                <p className="text-white/40 mb-6 leading-relaxed text-[15px]">
-                  From sunrise to sunset — VR space missions, planetarium shows, drone races, sports competitions, and endless activities for all ages.
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {['VR Experiences', 'Planetarium Shows', 'Kids Zone', 'Food Trucks'].map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-[11px] text-white/50 bg-white/[0.04] rounded-full font-medium tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          {/* Festival Cards - Daytime & Nighttime */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 max-w-5xl mx-auto">
+            <div className="h-[450px]">
+              <DestinationCard
+                imageUrl="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&auto=format&fit=crop&q=90"
+                location="Family Adventures"
+                flag="☀️"
+                stats="VR Experiences • Planetarium Shows • Kids Zone • Food Trucks"
+                href="#daytime"
+                themeColor="270 91% 65%"
+              />
             </div>
-
-            {/* Night Card */}
-            <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-violet-500/[0.06] to-fuchsia-600/[0.03] border border-violet-500/[0.08] hover:border-violet-500/15 transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-400/15 to-transparent rounded-bl-full" />
-              
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 mb-5 rounded-full bg-violet-500/10 text-violet-400/90 text-[10px] font-semibold uppercase tracking-[0.15em]">
-                  <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-                  Nighttime
-                </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight" >
-                  Electric Nights
-                </h3>
-                
-                <p className="text-white/40 mb-6 leading-relaxed text-[15px]">
-                  When the sun sets, the party ignites — world-class DJs, drone light spectacles, fire performers, and an unforgettable dance floor under the cosmos.
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {['Live DJs', 'Drone Shows', 'Fire Acts', 'Open Bar'].map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-[11px] text-white/50 bg-white/[0.04] rounded-full font-medium tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="h-[450px]">
+              <DestinationCard
+                imageUrl="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=90"
+                location="Electric Nights"
+                flag="🌙"
+                stats="Live DJs • Drone Shows • Fire Acts • Open Bar"
+                href="#nighttime"
+                themeColor="330 81% 60%"
+              />
             </div>
           </div>
 

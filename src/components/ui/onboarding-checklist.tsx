@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { CheckCircle2, PlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 // Define the type for a single checklist item
 interface ChecklistItem {
@@ -72,25 +73,35 @@ export const OnboardingChecklist = ({
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className={cn(
-        "w-full max-w-4xl mx-auto bg-card text-card-foreground border rounded-2xl shadow-sm p-8 overflow-hidden",
-        className
-      )}
-    >
+    <div className="relative w-full max-w-4xl mx-auto">
+      {/* Glow effect behind the card */}
+      <div className="absolute -inset-4 bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50" />
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className={cn(
+          "relative w-full bg-card text-card-foreground border border-white/10 rounded-2xl shadow-lg p-8 overflow-hidden",
+          className
+        )}
+      >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Side: Title and Checklist */}
         <div className="flex flex-col">
-          <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-2xl font-bold tracking-tight">
+            <AuroraText
+              colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+              speed={1.2}
+            >
+              {title}
+            </AuroraText>
+          </h2>
           <p className="mt-2 text-muted-foreground">{description}</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
             {items.map((item) => (
               <motion.li key={item.id} variants={itemVariants} className="flex flex-col">
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 text-violet-500 mt-0.5 flex-shrink-0" />
                   <span className="ml-3 text-sm font-medium">{item.text}</span>
                 </div>
                 {item.helperText && item.helperLink && (
@@ -98,7 +109,7 @@ export const OnboardingChecklist = ({
                     {item.helperText}{" "}
                     <a
                       href={item.helperLink.href}
-                      className="text-primary underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+                      className="text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 rounded-sm transition-colors"
                     >
                       {item.helperLink.text}
                     </a>
@@ -143,6 +154,7 @@ export const OnboardingChecklist = ({
         </motion.div>
       </div>
     </motion.div>
+    </div>
   );
 };
 

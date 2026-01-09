@@ -3,16 +3,50 @@
 import { ParallaxHero } from '@/components/ui/parallax-hero';
 import { HeroCollage } from '@/components/ui/modern-hero-section';
 import { OnboardingChecklist } from '@/components/ui/onboarding-checklist';
-import InteractiveImageBentoGallery from '@/components/ui/bento-gallery';
-import { OfferCarousel, type Offer } from '@/components/ui/offer-carousel';
-import { AnimatedHikeCard, type Stat } from '@/components/ui/card-25';
 import { CosmicBackground } from '@/components/ui/cosmic-background';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Timeline } from '@/components/ui/timeline';
-import { Clock, Users, Music, Trophy, Telescope, Gamepad2, Gift, ShoppingBag } from 'lucide-react';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { Clock, Telescope, Music, Users, MapPin, Gamepad2, Trophy, ShoppingBag, Gift, ArrowRight, Calendar, Plus, Minus } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Home() {
+  // Ticket form state
+  const [adultTickets, setAdultTickets] = useState(0);
+  const [childTickets, setChildTickets] = useState(0);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  });
+
+  const adultPrice = 25;
+  const childPrice = 0;
+  const totalPrice = adultTickets * adultPrice + childTickets * childPrice;
+
+  const handleQuantityChange = (type: 'adult' | 'child', delta: number) => {
+    if (type === 'adult') {
+      setAdultTickets((prev) => Math.max(0, Math.min(10, prev + delta)));
+    } else {
+      setChildTickets((prev) => Math.max(0, Math.min(10, prev + delta)));
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form submission logic would go here (Stripe integration)
+    console.log('Form submitted:', { adultTickets, childTickets, formData, totalPrice });
+  };
+
   // Daytime Activities Section Data
   const daytimeStats = [
     { value: '10+', label: 'Daytime Activities' },
@@ -48,21 +82,21 @@ export default function Home() {
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Clock className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Clock className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">10:00 AM - Welcome & Registration</div>
                 <div className="text-white/60">Check-in and receive your event pass</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Telescope className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Telescope className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">10:30 AM - Telescope Viewing Session</div>
                 <div className="text-white/60">Observe planets and stars with professional telescopes</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Gamepad2 className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Gamepad2 className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">11:00 AM - VR Space Adventures</div>
                 <div className="text-white/60">Immersive virtual reality space exploration</div>
@@ -103,21 +137,21 @@ export default function Home() {
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Users className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Users className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">2:00 PM - Interactive Workshops</div>
                 <div className="text-white/60">Learn about space science and astronomy</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Trophy className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Trophy className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">3:30 PM - Cosmic Games & Contests</div>
                 <div className="text-white/60">Compete in space trivia and win prizes</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <ShoppingBag className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <ShoppingBag className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">5:00 PM - Shopping & Food Zone</div>
                 <div className="text-white/60">Browse exclusive merchandise and enjoy cosmic cuisine</div>
@@ -158,21 +192,21 @@ export default function Home() {
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Telescope className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Telescope className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">7:00 PM - Night Telescope Session</div>
                 <div className="text-white/60">Stargazing with expert astronomers</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Music className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Music className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">9:00 PM - DJ Party Night</div>
                 <div className="text-white/60">Dance under the stars with cosmic beats (18+)</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Gift className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Gift className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">11:00 PM - Midnight Giveaways</div>
                 <div className="text-white/60">Win exclusive prizes and merchandise</div>
@@ -213,28 +247,28 @@ export default function Home() {
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Clock className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Clock className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">10:00 AM - Day 2 Kickoff</div>
                 <div className="text-white/60">All activities resume with new experiences</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Trophy className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Trophy className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">3:00 PM - Grand Finale Contests</div>
                 <div className="text-white/60">Final competitions with major prizes</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Music className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Music className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">8:00 PM - Closing Celebration</div>
                 <div className="text-white/60">Final night party with special performances</div>
               </div>
             </div>
             <div className="flex gap-3 items-start text-white/80 text-xs md:text-sm">
-              <Gift className="w-4 h-4 mt-0.5 text-amber-400 flex-shrink-0" />
+              <Gift className="w-4 h-4 mt-0.5 text-violet-400 flex-shrink-0" />
               <div>
                 <div className="font-semibold text-white">10:00 PM - Final Giveaways</div>
                 <div className="text-white/60">Last chance to win amazing prizes</div>
@@ -294,188 +328,6 @@ export default function Home() {
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?si=_MZFE2nm9fevcj76",
   };
 
-  // Bento Gallery Data
-  const galleryItems = [
-    {
-      id: 1,
-      title: "VR Space Adventures",
-      desc: "Immerse yourself in virtual reality space exploration.",
-      url: "https://images.unsplash.com/photo-1593508512255-86ab42a0e620?w=800&q=80",
-      span: "md:col-span-2 md:row-span-2",
-    },
-    {
-      id: 2,
-      title: "Telescope Observations",
-      desc: "View planets and stars through professional telescopes.",
-      url: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&q=80",
-      span: "md:row-span-1",
-    },
-    {
-      id: 3,
-      title: "Interactive Games",
-      desc: "Fun space-themed games and challenges for all ages.",
-      url: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80",
-      span: "md:row-span-1",
-    },
-    {
-      id: 4,
-      title: "DJ Party Night",
-      desc: "Dance under the stars with cosmic beats and drinks.",
-      url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
-      span: "md:row-span-2",
-    },
-    {
-      id: 5,
-      title: "Contests & Competitions",
-      desc: "Win amazing prizes in space trivia and challenges.",
-      url: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-      span: "md:row-span-1",
-    },
-    {
-      id: 6,
-      title: "Merchandise Shops",
-      desc: "Exclusive space-themed souvenirs and collectibles.",
-      url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-      span: "md:col-span-2 md:row-span-1",
-    },
-    {
-      id: 7,
-      title: "Giveaways & Prizes",
-      desc: "Exciting giveaways throughout the event.",
-      url: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
-      span: "md:row-span-1",
-    },
-  ];
-
-  // Offer Carousel Data
-  const offers: Offer[] = [
-    {
-      id: 1,
-      imageSrc: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
-      imageAlt: "Early bird ticket offer",
-      tag: "Early Bird",
-      title: "Save 30% on Tickets",
-      description: "Book now and get exclusive early bird pricing for both days.",
-      brandLogoSrc: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=100&q=80",
-      brandName: "Planetarium",
-      promoCode: "EARLY30",
-      href: "#",
-    },
-    {
-      id: 2,
-      imageSrc: "https://images.unsplash.com/photo-1593508512255-86ab42a0e620?w=800&q=80",
-      imageAlt: "VR package deal",
-      tag: "Package Deal",
-      title: "VR Experience Bundle",
-      description: "Get unlimited VR sessions plus priority access.",
-      brandLogoSrc: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=100&q=80",
-      brandName: "VR Zone",
-      promoCode: "VRBUNDLE",
-      href: "#",
-    },
-    {
-      id: 3,
-      imageSrc: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
-      imageAlt: "Group discount",
-      tag: "Group Discount",
-      title: "Bring 5+ Friends",
-      description: "Groups of 5 or more get 20% off all tickets.",
-      brandLogoSrc: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=100&q=80",
-      brandName: "Group Rates",
-      promoCode: "GROUP20",
-      href: "#",
-    },
-    {
-      id: 4,
-      imageSrc: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-      imageAlt: "Merchandise offer",
-      tag: "Special Offer",
-      title: "Free Gift with Purchase",
-      description: "Spend €50+ at shops and get a free cosmic t-shirt.",
-      brandLogoSrc: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=100&q=80",
-      brandName: "Event Shop",
-      promoCode: "FREETEE",
-      href: "#",
-    },
-    {
-      id: 5,
-      imageSrc: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-      imageAlt: "DJ party tickets",
-      tag: "Night Event",
-      title: "DJ Party Access",
-      description: "Special pricing for night party with drinks included.",
-      brandLogoSrc: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=100&q=80",
-      brandName: "Night Party",
-      promoCode: "NIGHT25",
-      href: "#",
-    },
-  ];
-
-  // Feature Cards Data
-  const vrCard = {
-    title: "VR Experience",
-    images: [
-      "https://images.unsplash.com/photo-1593508512255-86ab42a0e620?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
-    ],
-    stats: [
-      { icon: <Clock className="h-4 w-4" />, label: "30 min sessions" },
-      { icon: <Users className="h-4 w-4" />, label: "Multiplayer" },
-      { icon: <Gamepad2 className="h-4 w-4" />, label: "Interactive" },
-    ] as Stat[],
-    description: "Step into virtual reality and explore distant galaxies, walk on Mars, or journey through black holes in immersive VR experiences.",
-    href: "#",
-  };
-
-  const telescopeCard = {
-    title: "Telescope Viewing",
-    images: [
-      "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&q=80",
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
-      "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80",
-    ],
-    stats: [
-      { icon: <Telescope className="h-4 w-4" />, label: "Professional" },
-      { icon: <Clock className="h-4 w-4" />, label: "Night sessions" },
-      { icon: <Users className="h-4 w-4" />, label: "Guided tours" },
-    ] as Stat[],
-    description: "Observe Saturn's rings, Jupiter's moons, and distant nebulas through our state-of-the-art telescopes with expert astronomers.",
-    href: "#",
-  };
-
-  const djPartyCard = {
-    title: "DJ Party Night",
-    images: [
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80",
-      "https://images.unsplash.com/photo-1501281668745-f7f57525c1b4?w=800&q=80",
-    ],
-    stats: [
-      { icon: <Music className="h-4 w-4" />, label: "Live DJ" },
-      { icon: <Clock className="h-4 w-4" />, label: "9PM - 2AM" },
-      { icon: <Users className="h-4 w-4" />, label: "18+" },
-    ] as Stat[],
-    description: "As night falls, the planetarium transforms into a cosmic dance floor with DJ sets, drinks, and dancing games under the stars.",
-    href: "#",
-  };
-
-  const contestsCard = {
-    title: "Contests & Games",
-    images: [
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80",
-    ],
-    stats: [
-      { icon: <Trophy className="h-4 w-4" />, label: "Prizes" },
-      { icon: <Gamepad2 className="h-4 w-4" />, label: "Fun games" },
-      { icon: <Gift className="h-4 w-4" />, label: "Giveaways" },
-    ] as Stat[],
-    description: "Compete in space trivia, cosmic challenges, and interactive games. Win exclusive prizes and merchandise throughout the event.",
-    href: "#",
-  };
-
   return (
     <main className="relative w-full overflow-x-hidden">
       {/* Existing Parallax Hero - higher z-index to stay above background */}
@@ -495,12 +347,12 @@ export default function Home() {
               <span className="block text-white">Daytime</span>
               <SparklesText 
                 className="block"
-                sparklesCount={6}
-                colors={{ first: '#f59e0b', second: '#fbbf24' }}
+                sparklesCount={8}
+                colors={{ first: '#a855f7', second: '#22d3ee' }}
               >
                 <AuroraText
-                  colors={['#f59e0b', '#fbbf24', '#fcd34d', '#f59e0b']}
-                  speed={1.0}
+                  colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                  speed={1.2}
                 >
                   Adventures
                 </AuroraText>
@@ -510,7 +362,7 @@ export default function Home() {
           subtitle="From sunrise to sunset, explore immersive VR experiences, interactive workshops, telescope observations, cosmic games, and exclusive daytime events. Discover the universe in a whole new light."
           stats={daytimeStats}
           images={daytimeImages}
-          accentColor="text-amber-500"
+          accentColor="text-violet-500"
         />
 
         {/* Event Timeline */}
@@ -529,31 +381,241 @@ export default function Home() {
           />
         </section>
 
-        {/* Bento Gallery */}
-        <InteractiveImageBentoGallery
-          imageItems={galleryItems}
-          title="Explore Our Activities"
-          description="From virtual reality space journeys to telescope observations, interactive games to night parties - discover everything the festival has to offer."
-        />
-
-        {/* Offer Carousel */}
-        <section className="w-full py-16 px-4">
-          <div className="w-full max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-foreground text-center">Special Offers & Deals</h2>
-            <OfferCarousel offers={offers} />
-          </div>
-        </section>
-
-        {/* Feature Cards */}
-        <section className="w-full py-16 px-4">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-foreground text-center">Featured Experiences</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-              <AnimatedHikeCard {...vrCard} />
-              <AnimatedHikeCard {...telescopeCard} />
-              <AnimatedHikeCard {...djPartyCard} />
-              <AnimatedHikeCard {...contestsCard} />
+        {/* Ticket Purchase Section */}
+        <section className="w-full py-20 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            {/* Section divider */}
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
+              <div className="w-2 h-2 rounded-full bg-violet-500/50" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
             </div>
+
+            {/* Title */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">
+                <AuroraText
+                  colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                  speed={1.2}
+                >
+                  Get Your Tickets
+                </AuroraText>
+              </h2>
+              <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
+                Secure your spot for Cyprus' most epic 2-day celebration
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-16 md:space-y-8">
+              {/* Mobile: Separate Cards | Desktop: Unified Card */}
+              <div className="md:bg-gradient-to-br md:from-white/[0.03] md:to-white/[0.01] md:border md:border-white/10 md:rounded-3xl md:p-12 md:backdrop-blur-sm md:shadow-2xl md:shadow-violet-500/5 md:space-y-12">
+                
+                {/* Ticket Selection Card */}
+                <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 mb-12 md:mb-0 md:bg-transparent md:border-0 md:p-0 backdrop-blur-sm">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Select Tickets</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Adult Ticket */}
+                    <div className="group relative p-5 md:p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:border-violet-500/40 hover:bg-violet-500/5 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="w-2 h-2 rounded-full bg-violet-500" />
+                            <h4 className="text-lg font-bold text-white">Adult</h4>
+                          </div>
+                          <div className="text-2xl md:text-3xl font-black text-violet-400 mb-1">€25</div>
+                          <div className="text-xs text-white/50">Ages 13+</div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button
+                            type="button"
+                            onClick={() => handleQuantityChange('adult', -1)}
+                            disabled={adultTickets === 0}
+                            className="w-10 h-10 md:w-8 md:h-8 rounded-lg border border-white/10 bg-white/[0.02] text-white hover:bg-violet-500/20 hover:border-violet-500/50 transition-all flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                          >
+                            <Minus className="w-4 h-4 md:w-3.5 md:h-3.5" />
+                          </button>
+                          <div className="w-12 md:w-10 text-center text-xl font-bold text-white">
+                            {adultTickets}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => handleQuantityChange('adult', 1)}
+                            disabled={adultTickets >= 10}
+                            className="w-10 h-10 md:w-8 md:h-8 rounded-lg border border-white/10 bg-white/[0.02] text-white hover:bg-violet-500/20 hover:border-violet-500/50 transition-all flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                          >
+                            <Plus className="w-4 h-4 md:w-3.5 md:h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-xs text-white/60 space-y-1">
+                        <div>• Full access</div>
+                        <div>• VR & planetarium</div>
+                        <div>• Live entertainment</div>
+                      </div>
+                    </div>
+
+                    {/* Child Ticket */}
+                    <div className="group relative p-5 md:p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                            <h4 className="text-lg font-bold text-white">Child</h4>
+                          </div>
+                          <div className="text-2xl md:text-3xl font-black text-cyan-400 mb-1">Free</div>
+                          <div className="text-xs text-white/50">Ages 12 & under</div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button
+                            type="button"
+                            onClick={() => handleQuantityChange('child', -1)}
+                            disabled={childTickets === 0}
+                            className="w-10 h-10 md:w-8 md:h-8 rounded-lg border border-white/10 bg-white/[0.02] text-white hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                          >
+                            <Minus className="w-4 h-4 md:w-3.5 md:h-3.5" />
+                          </button>
+                          <div className="w-12 md:w-10 text-center text-xl font-bold text-white">
+                            {childTickets}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => handleQuantityChange('child', 1)}
+                            disabled={childTickets >= 10}
+                            className="w-10 h-10 md:w-8 md:h-8 rounded-lg border border-white/10 bg-white/[0.02] text-white hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+                          >
+                            <Plus className="w-4 h-4 md:w-3.5 md:h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                      <div className="text-xs text-white/60 space-y-1">
+                        <div>• Full access</div>
+                        <div>• Kids zone</div>
+                        <div>• With adult</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop Divider */}
+                <div className="hidden md:block h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                {/* Personal Information Card */}
+                <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 mb-12 md:mb-0 md:bg-transparent md:border-0 md:p-0 backdrop-blur-sm">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Your Details</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-white/70 mb-2">First Name *</label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        required
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-white/70 mb-2">Last Name *</label>
+                      <input
+                        type="text"
+                        name="lastName"
+                        required
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all"
+                        placeholder="Doe"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block text-sm font-medium text-white/70 mb-2">Email Address *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all"
+                        placeholder="john.doe@example.com"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block text-sm font-medium text-white/70 mb-2">Phone Number *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all"
+                        placeholder="+357 99 123 456"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop Divider */}
+                <div className="hidden md:block h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                {/* Order Summary Card */}
+                <div className="bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-2xl p-6 md:bg-transparent md:border-0 md:p-0 backdrop-blur-sm">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div className="flex-1 space-y-4">
+                      {(adultTickets > 0 || childTickets > 0) ? (
+                        <div className="flex flex-wrap items-center gap-3">
+                          {adultTickets > 0 && (
+                            <div className="px-4 py-2 rounded-lg bg-violet-500/10 border border-violet-500/20">
+                              <span className="text-sm text-white/80">{adultTickets}x Adult</span>
+                              <span className="text-sm font-semibold text-violet-400 ml-2">€{adultTickets * adultPrice}</span>
+                            </div>
+                          )}
+                          {childTickets > 0 && (
+                            <div className="px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+                              <span className="text-sm text-white/80">{childTickets}x Child</span>
+                              <span className="text-sm font-semibold text-cyan-400 ml-2">Free</span>
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="text-white/40 text-sm">Select tickets above</p>
+                      )}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-white/60">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4 text-violet-400/70" />
+                          <span>June 14-15, 2026</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-cyan-400/70" />
+                          <span>Nicosia, Cyprus</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-white/10 sm:border-t-0 sm:pt-0">
+                      <div className="text-center sm:text-right">
+                        <div className="text-xs text-white/60 mb-1">Total</div>
+                        <div className="text-2xl md:text-3xl font-black text-violet-400">€{totalPrice}</div>
+                      </div>
+                      <ShimmerButton
+                        type="submit"
+                        disabled={totalPrice === 0 || !formData.firstName || !formData.lastName || !formData.email || !formData.phone}
+                        className="shadow-2xl px-6 md:px-8 py-3 md:py-4 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap w-full sm:w-auto"
+                        shimmerColor="#a855f7"
+                        shimmerSize="0.08em"
+                        background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
+                      >
+                        <span className="flex items-center justify-center gap-2 font-semibold text-white tracking-wide">
+                          Proceed to Payment
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-violet-400/80 flex-shrink-0" />
+                        </span>
+                      </ShimmerButton>
+                    </div>
+                  </div>
+                  <p className="text-xs text-white/40 text-center mt-6 pt-6 border-t border-white/5 md:mt-8">
+                    Secure checkout powered by Stripe
+                  </p>
+                </div>
+              </div>
+            </form>
           </div>
         </section>
       </div>
