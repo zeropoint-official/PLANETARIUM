@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
-import { Sparkles, Music, Telescope, Gamepad2 } from "lucide-react";
+import { Sparkles, Music, Telescope, Gamepad2, CheckCircle2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
@@ -10,10 +10,20 @@ import { Badge } from "@/components/ui/badge";
 
 interface ExpandableFestivalCardProps {
   className?: string;
+  items?: Array<{
+    id: number | string;
+    text: string;
+    helperText?: string;
+    helperLink?: {
+      href: string;
+      text: string;
+    };
+  }>;
 }
 
 export const ExpandableFestivalCard = ({
   className,
+  items = [],
 }: ExpandableFestivalCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(true); // Start as mobile to prevent initial expansion
@@ -84,36 +94,47 @@ export const ExpandableFestivalCard = ({
           <div className="flex items-start justify-between mb-6">
             <div className="flex-1">
               <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-2">
-                Festival Highlights
+                Preparation Guide
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                What to Expect
+                What to Bring
               </h3>
               <p className="text-sm text-white/60">
-                Discover the incredible experiences waiting for you
+                Make sure you have everything ready for an unforgettable 2-day experience
               </p>
             </div>
           </div>
 
-          {/* Feature icons */}
-          <div className="flex items-center gap-3 mb-6">
-            {highlights.map(({ icon: Icon, label, color }, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "flex h-12 w-12 items-center justify-center rounded-full text-white transition-transform hover:scale-110",
-                  color
-                )}
-                title={label}
-              >
-                <Icon size={20} />
-              </div>
-            ))}
-          </div>
+          {/* Checklist Items */}
+          {items.length > 0 && (
+            <div className="mb-6">
+              <ul className="space-y-3">
+                {items.map((item) => (
+                  <li key={item.id} className="flex flex-col">
+                    <div className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-violet-500 mt-0.5 flex-shrink-0" />
+                      <span className="ml-3 text-sm font-medium text-white">{item.text}</span>
+                    </div>
+                    {item.helperText && item.helperLink && (
+                      <div className="ml-8 mt-1 text-xs text-white/60">
+                        {item.helperText}{" "}
+                        <a
+                          href={item.helperLink.href}
+                          className="text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline transition-colors"
+                        >
+                          {item.helperLink.text}
+                        </a>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Animated expandable section */}
           <AnimatePresence>
-            {isExpanded && (
+            {isExpanded && items.length === 0 && (
               <motion.div
                 key="details"
                 initial={{ opacity: 0, height: 0, marginTop: 0 }}

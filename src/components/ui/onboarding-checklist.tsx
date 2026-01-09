@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import { motion } from "motion/react";
-import { CheckCircle2, PlayCircle } from "lucide-react";
+import { CheckCircle2, PlayCircle, Telescope, Gamepad2, Music, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -88,36 +88,52 @@ export const OnboardingChecklist = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Side: Title and Checklist */}
         <div className="flex flex-col">
-          <h2 className="text-2xl font-bold tracking-tight">
-            <AuroraText
-              colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
-              speed={1.2}
-            >
-              {title}
-            </AuroraText>
-          </h2>
-          <p className="mt-2 text-muted-foreground">{description}</p>
-          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-            {items.map((item) => (
-              <motion.li key={item.id} variants={itemVariants} className="flex flex-col">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-violet-500 mt-0.5 flex-shrink-0" />
-                  <span className="ml-3 text-sm font-medium">{item.text}</span>
-                </div>
-                {item.helperText && item.helperLink && (
-                  <div className="ml-8 mt-1 text-xs text-muted-foreground">
-                    {item.helperText}{" "}
-                    <a
-                      href={item.helperLink.href}
-                      className="text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 rounded-sm transition-colors"
-                    >
-                      {item.helperLink.text}
-                    </a>
-                  </div>
-                )}
-              </motion.li>
-            ))}
-          </ul>
+          {/* What to Expect Section */}
+          <div>
+            <h3 className="text-xl font-bold mb-3">
+              <AuroraText
+                colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                speed={1.2}
+              >
+                What to Expect
+              </AuroraText>
+            </h3>
+            <p className="text-sm text-white/60 mb-4">
+              Explore the amazing activities and events planned for your visit
+            </p>
+            
+            {/* Feature icons */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-white transition-transform hover:scale-110" title="Stargazing">
+                <Telescope size={20} />
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-violet-500 text-white transition-transform hover:scale-110" title="VR Adventures">
+                <Gamepad2 size={20} />
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 text-white transition-transform hover:scale-110" title="Live Music">
+                <Music size={20} />
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-500 text-white transition-transform hover:scale-110" title="More">
+                <Sparkles size={20} />
+              </div>
+            </div>
+            
+            {/* Daytime and Nighttime Activities */}
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-2">Daytime Activities</h4>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  VR adventures, planetarium shows, workshops, and family activities.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-2">Nighttime Events</h4>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  DJ performances, stargazing sessions, fire acts, and dancing under the stars.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Side: Video Thumbnail */}

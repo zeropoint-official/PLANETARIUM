@@ -2,7 +2,7 @@
 
 import { ParallaxHero } from '@/components/ui/parallax-hero';
 import { HeroCollage } from '@/components/ui/modern-hero-section';
-import { OnboardingChecklist } from '@/components/ui/onboarding-checklist';
+import { ExpandableFestivalCard } from '@/components/ui/expandable-festival-card';
 import { CosmicBackground } from '@/components/ui/cosmic-background';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
@@ -370,15 +370,13 @@ export default function Home() {
           <Timeline data={timelineData} />
         </div>
 
-        {/* Onboarding Checklist */}
+        {/* Preparation Checklist */}
         <section className="w-full flex items-center justify-center p-4 py-16">
-          <OnboardingChecklist
-            title={checklistData.title}
-            description={checklistData.description}
-            items={checklistData.items}
-            videoThumbnailUrl={checklistData.videoThumbnailUrl}
-            videoUrl={checklistData.videoUrl}
-          />
+          <div className="max-w-6xl mx-auto w-full">
+            <ExpandableFestivalCard 
+              items={checklistData.items}
+            />
+          </div>
         </section>
 
         {/* Ticket Purchase Section */}

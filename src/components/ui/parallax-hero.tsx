@@ -8,7 +8,7 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { NumberTicker } from '@/components/ui/number-ticker';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
-import { ExpandableFestivalCard } from '@/components/ui/expandable-festival-card';
+import { OnboardingChecklist } from '@/components/ui/onboarding-checklist';
 import { DestinationCard } from '@/components/ui/card-21';
 
 export function ParallaxHero() {
@@ -253,8 +253,16 @@ export function ParallaxHero() {
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
           </div>
 
-          {/* Expandable Festival Card */}
-          <ExpandableFestivalCard />
+          {/* Prepare for Your Cosmic Adventure with What to Expect */}
+          <div className="mb-16">
+            <OnboardingChecklist
+              title=""
+              description=""
+              items={[]}
+              videoThumbnailUrl="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&auto=format&fit=crop&q=80"
+              videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ?si=_MZFE2nm9fevcj76"
+            />
+          </div>
 
           {/* Minimal Centered Stats */}
           <div className="relative max-w-2xl mx-auto mb-20">
