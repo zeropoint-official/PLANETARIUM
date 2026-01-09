@@ -8,6 +8,7 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { NumberTicker } from '@/components/ui/number-ticker';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { ExpandableFestivalCard } from '@/components/ui/expandable-festival-card';
 
 export function ParallaxHero() {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -161,9 +162,9 @@ export function ParallaxHero() {
                       </div>
                       
                       {/* Mobile Astronaut - floating next to CTA */}
-                      <div className="relative w-[140px] h-[140px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
+                      <div className="relative w-[170px] h-[170px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
                         {/* Enhanced glow for mobile */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[190px] h-[190px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
                         
                         <img
                           src="/Untitled Design Multi-Design (1).png"
@@ -251,34 +252,86 @@ export function ParallaxHero() {
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
           </div>
 
-          {/* Stats Row with Magic UI NumberTicker */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2" >
-                <NumberTicker value={2} className="text-white" />
-              </div>
-              <div className="text-[11px] text-white/35 uppercase tracking-[0.2em] font-medium">Days of Wonder</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2" >
-                <NumberTicker value={30} className="text-white" delay={0.2} />
-                <span className="text-violet-400/80">+</span>
-              </div>
-              <div className="text-[11px] text-white/35 uppercase tracking-[0.2em] font-medium">Live Performances</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2" >
-                <NumberTicker value={5} className="text-white" delay={0.4} />
-                <span className="text-white">K</span>
-                <span className="text-violet-400/80">+</span>
-              </div>
-              <div className="text-[11px] text-white/35 uppercase tracking-[0.2em] font-medium">Expected Guests</div>
+          {/* Expandable Festival Card */}
+          <ExpandableFestivalCard />
+
+          {/* Minimal Centered Stats */}
+          <div className="relative max-w-2xl mx-auto mb-20">
+            {/* Stats Items */}
+            <div className="space-y-20 md:space-y-24">
+              {/* Stat 1: Experience Zones */}
+              <div className="group relative text-center">
+                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
+                  Experience Zones
                 </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2" >
-                ∞
+                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
+                  <NumberTicker value={15} className="text-white" delay={0.5} />
+                  <span className="text-violet-400/70 ml-2 text-4xl md:text-5xl font-normal">+</span>
+                </div>
+                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
+                  Unique interactive areas and immersive spaces
+                </div>
+                {/* Separator */}
+                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="w-1 h-1 rounded-full bg-white/20" />
+                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
+                </div>
               </div>
-              <div className="text-[11px] text-white/35 uppercase tracking-[0.2em] font-medium">Memories to Make</div>
+
+              {/* Stat 2: Performances */}
+              <div className="group relative text-center">
+                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
+                  Live Entertainment
+                </div>
+                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
+                  <NumberTicker value={50} className="text-white" delay={1.0} />
+                  <span className="text-cyan-400/70 ml-2 text-4xl md:text-5xl font-normal">+</span>
+                </div>
+                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
+                  World-class DJs, live bands, and performances
+                </div>
+                {/* Separator */}
+                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="w-1 h-1 rounded-full bg-white/20" />
+                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
+                </div>
+              </div>
+
+              {/* Stat 3: Expected Guests */}
+              <div className="group relative text-center">
+                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
+                  Expected Attendance
+                </div>
+                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
+                  <NumberTicker value={8} className="text-white" delay={1.5} />
+                  <span className="text-amber-400/70 ml-2 text-4xl md:text-5xl font-normal">K+</span>
+                </div>
+                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
+                  Join thousands of festival-goers from around the world
+                </div>
+                {/* Separator */}
+                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="w-1 h-1 rounded-full bg-white/20" />
+                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
+                </div>
+              </div>
+
+              {/* Stat 4: Days */}
+              <div className="group relative text-center">
+                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
+                  Event Duration
+                </div>
+                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
+                  <NumberTicker value={2} className="text-white" delay={2.0} />
+                  <span className="text-violet-400/70 ml-2 text-4xl md:text-5xl font-normal">Days</span>
+                </div>
+                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
+                  Two full days of immersive experiences
+                </div>
+              </div>
             </div>
           </div>
 
