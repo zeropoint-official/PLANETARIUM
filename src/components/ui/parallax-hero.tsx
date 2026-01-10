@@ -89,7 +89,7 @@ export function ParallaxHero() {
             {/* Layer 3: Title Content */}
             <div 
               data-parallax-layer="3" 
-              className="absolute z-[5] top-[5%] sm:top-[15%] md:top-[18%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
+              className="absolute z-[5] top-[3%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
                 {/* Pre-title */}
@@ -120,24 +120,16 @@ export function ParallaxHero() {
                 </h1>
                 
                 {/* Tagline */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-5 sm:mb-12 leading-relaxed text-white/40 tracking-wide px-2">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-3 sm:mb-6 leading-relaxed text-white/40 tracking-wide px-2">
                   Join Cyprus' most epic celebration — two days of music, art, and unforgettable experiences
                 </p>
                 
                 {/* Ticket CTA with Magic UI ShimmerButton - Mobile layout with astronaut */}
-                <div className="flex flex-col items-center mb-0 sm:mb-20 mt-8 sm:mt-0">
-                  {/* Counter badge on top - desktop only */}
-                  <div className="hidden sm:flex absolute -top-3 left-1/2 -translate-x-1/2 z-10 items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm animate-float-subtle">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
-                      30 days left
-                    </span>
-                  </div>
-                  
+                <div className="flex flex-col items-center mb-0 sm:mb-20 mt-2 sm:mt-0">
                   {/* Mobile: Horizontal row with CTA and astronaut */}
-                  <div className="sm:hidden flex flex-col items-center justify-center gap-4 relative w-full mt-4">
+                  <div className="sm:hidden flex flex-col items-center justify-center gap-0 relative w-full mt-2">
                     {/* Counter badge - mobile version with floating animation */}
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm z-10 animate-float-subtle">
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm z-10 animate-float-subtle -mb-12">
                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
                         30 days left
@@ -145,7 +137,7 @@ export function ParallaxHero() {
                     </div>
                     
                     {/* CTA and Astronaut Container */}
-                    <div className="flex items-center justify-center gap-2 relative w-full -mt-8">
+                    <div className="flex items-center justify-center gap-2 relative w-full">
                       {/* CTA Button Container with rotation animation */}
                       <div className="flex flex-col items-center gap-2 relative z-10 animate-rotate-subtle" style={{ transformOrigin: 'left center' }}>
                         {/* Magic UI Shimmer Button */}
@@ -186,6 +178,13 @@ export function ParallaxHero() {
                   
                   {/* Desktop: CTA only */}
                   <div className="hidden sm:flex flex-col items-center gap-2 relative z-10">
+                    {/* Counter badge on top - desktop only */}
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10 items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm animate-float-subtle flex">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
+                        30 days left
+                      </span>
+                    </div>
                     {/* Magic UI Shimmer Button */}
                     <ShimmerButton 
                       className="shadow-2xl whitespace-nowrap"
