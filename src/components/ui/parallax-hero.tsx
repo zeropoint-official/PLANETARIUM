@@ -58,7 +58,7 @@ export function ParallaxHero() {
   return (
     <div ref={parallaxRef} className="relative w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[500px] sm:h-screen sm:min-h-[700px] w-full overflow-hidden bg-[#030308]">
+      <section className="relative h-[550px] sm:h-screen sm:min-h-[700px] w-full overflow-hidden bg-[#030308]">
         <div className="relative w-full h-full overflow-hidden">
           <div data-parallax-layers className="relative w-full h-full overflow-hidden">
             
@@ -163,12 +163,12 @@ export function ParallaxHero() {
                       </div>
                       
                       {/* Mobile Astronaut - floating next to CTA */}
-                      <div className="relative w-[170px] h-[170px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
+                      <div className="relative w-[280px] h-[280px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
                         {/* Enhanced glow for mobile */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[190px] h-[190px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
                         
                         <img
-                          src="/Untitled Design Multi-Design (1).png"
+                          src="/austronaunt.png"
                           alt="Cosmic Explorer"
                           className="relative w-full h-full object-contain drop-shadow-2xl"
                           style={{
@@ -239,7 +239,7 @@ export function ParallaxHero() {
       </section>
 
       {/* Highlights Section - Seamless continuation */}
-      <section className="relative z-10 pt-8 pb-32 sm:pb-80 px-6">
+      <section className="relative z-10 pt-0 pb-16 sm:pt-2 sm:pb-24 px-6">
         {/* Background that fades out very smoothly */}
         <div className="absolute inset-x-0 top-0 bottom-[400px] bg-[#030308]" />
         <div className="absolute inset-x-0 bottom-0 h-[450px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, #030308 0%, rgba(3,3,8,0.8) 25%, rgba(3,3,8,0.5) 50%, rgba(3,3,8,0.2) 75%, transparent 100%)' }} />
@@ -247,14 +247,14 @@ export function ParallaxHero() {
         <div className="relative max-w-6xl mx-auto">
           
           {/* Section divider */}
-          <div className="flex items-center justify-center gap-4 mb-16">
+          <div className="flex items-center justify-center gap-4 mb-4 hidden md:flex">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
             <Sparkles className="w-4 h-4 text-violet-400" />
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
           </div>
 
           {/* Prepare for Your Cosmic Adventure with What to Expect */}
-          <div className="mb-16">
+          <div className="mb-4">
             <OnboardingChecklist
               title=""
               description=""
@@ -265,9 +265,9 @@ export function ParallaxHero() {
           </div>
 
           {/* Minimal Centered Stats */}
-          <div className="relative max-w-2xl mx-auto mb-20">
+          <div className="relative max-w-2xl mx-auto mb-12">
             {/* Stats Items */}
-            <div className="space-y-20 md:space-y-24">
+            <div className="space-y-10 md:space-y-12">
               {/* Stat 1: Experience Zones */}
               <div className="group relative text-center">
                 <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
@@ -281,7 +281,7 @@ export function ParallaxHero() {
                   Unique interactive areas and immersive spaces
                 </div>
                 {/* Separator */}
-                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
                   <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                   <div className="w-1 h-1 rounded-full bg-white/20" />
                   <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
@@ -301,7 +301,7 @@ export function ParallaxHero() {
                   World-class DJs, live bands, and performances
                 </div>
                 {/* Separator */}
-                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
                   <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                   <div className="w-1 h-1 rounded-full bg-white/20" />
                   <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
@@ -321,7 +321,7 @@ export function ParallaxHero() {
                   Join thousands of festival-goers from around the world
                 </div>
                 {/* Separator */}
-                <div className="mt-12 md:mt-16 flex items-center justify-center gap-4">
+                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
                   <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                   <div className="w-1 h-1 rounded-full bg-white/20" />
                   <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
