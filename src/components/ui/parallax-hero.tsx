@@ -86,7 +86,7 @@ export function ParallaxHero() {
             </div>
 
             {/* Mobile Logo - Top Left */}
-            <div className="absolute top-4 left-4 z-[6] sm:hidden">
+            <div className="absolute top-4 left-4 z-[10] sm:hidden pointer-events-none">
               <img 
                 src="/Memora logo.png" 
                 alt="Memora Logo" 
@@ -97,7 +97,7 @@ export function ParallaxHero() {
             {/* Layer 3: Title Content */}
             <div 
               data-parallax-layer="3" 
-              className="absolute z-[5] top-[3%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
+              className="absolute z-[5] top-[12%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
                 {/* Logo - Hidden on mobile, visible on desktop */}

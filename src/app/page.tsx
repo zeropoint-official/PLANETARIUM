@@ -49,9 +49,9 @@ export default function Home() {
 
   // Daytime Activities Section Data
   const daytimeStats = [
-    { value: '10+', label: 'Daytime Activities' },
-    { value: '8', label: 'Hours of Fun' },
-    { value: '5', label: 'Main Attractions' },
+    { value: '100+', label: 'Daytime Activities' },
+    { value: '28', label: 'Hours of Fun' },
+    { value: '10', label: 'Main Attractions' },
   ];
 
   const daytimeImages = [
