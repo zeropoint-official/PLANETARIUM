@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import { motion } from "motion/react";
-import { CheckCircle2, PlayCircle, Telescope, Gamepad2, Music, Sparkles } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -86,60 +86,10 @@ export const OnboardingChecklist = ({
         )}
       >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left Side: Title and Checklist */}
-        <div className="flex flex-col">
-          {/* What to Expect Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-3">
-              <AuroraText
-                colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
-                speed={1.2}
-              >
-                What to Expect
-              </AuroraText>
-            </h3>
-            <p className="text-sm text-white/60 mb-4">
-              Explore the amazing activities and events planned for your visit
-            </p>
-            
-            {/* Feature icons */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-white transition-transform hover:scale-110" title="Stargazing">
-                <Telescope size={20} />
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-violet-500 text-white transition-transform hover:scale-110" title="VR Adventures">
-                <Gamepad2 size={20} />
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 text-white transition-transform hover:scale-110" title="Live Music">
-                <Music size={20} />
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-500 text-white transition-transform hover:scale-110" title="More">
-                <Sparkles size={20} />
-              </div>
-            </div>
-            
-            {/* Daytime and Nighttime Activities */}
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-sm font-semibold text-white mb-2">Daytime Activities</h4>
-                <p className="text-sm text-white/70 leading-relaxed">
-                  VR adventures, planetarium shows, workshops, and family activities.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-sm font-semibold text-white mb-2">Nighttime Events</h4>
-                <p className="text-sm text-white/70 leading-relaxed">
-                  DJ performances, stargazing sessions, fire acts, and dancing under the stars.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Video Thumbnail */}
+        {/* Video Thumbnail - First on mobile, second on desktop */}
         <motion.div
-          variants={itemVariants} // Re-using item variant for a nice slide-in effect
-          className="relative group rounded-lg overflow-hidden cursor-pointer w-full aspect-video"
+          variants={itemVariants}
+          className="relative group rounded-lg overflow-hidden cursor-pointer w-full aspect-video order-1 md:order-2"
         >
           <Dialog>
             <DialogTrigger asChild>
@@ -168,6 +118,24 @@ export const OnboardingChecklist = ({
             </DialogContent>
           </Dialog>
         </motion.div>
+
+        {/* Left Side: Title and Checklist - Second on mobile, first on desktop */}
+        <div className="flex flex-col order-2 md:order-1">
+          {/* What to Expect Section */}
+          <div>
+            <h3 className="text-xl font-bold mb-3">
+              <AuroraText
+                colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                speed={1.2}
+              >
+                What to Expect
+              </AuroraText>
+            </h3>
+            <p className="text-sm text-white/60">
+              Two days of immersive experiences, live entertainment, and cosmic adventures
+            </p>
+          </div>
+        </div>
       </div>
     </motion.div>
     </div>

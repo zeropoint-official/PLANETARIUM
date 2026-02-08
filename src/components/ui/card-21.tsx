@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils"; // Your utility for merging class names
-import { ArrowRight } from "lucide-react";
 import { useInView } from "motion/react";
 
 // Define the props for the DestinationCard component
@@ -84,30 +83,55 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
             style={{ backgroundImage: `url(${imageUrl})` }}
           />
 
-          {/* Themed Gradient Overlay */}
+          {/* Themed Gradient Overlay - Always visible but subtle */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 transition-opacity duration-500"
             style={{
-              background: `linear-gradient(to top, hsl(var(--theme-color) / 0.9), hsl(var(--theme-color) / 0.6) 30%, transparent 60%)`,
+              background: `linear-gradient(to top, hsl(var(--theme-color) / 0.4), hsl(var(--theme-color) / 0.2) 30%, transparent 60%)`,
             }}
+          />
+
+          {/* Dark Overlay - Only visible when expanded */}
+          <div
+            className={cn(
+              "absolute inset-0 bg-black/60 transition-opacity duration-500",
+              isActive ? "opacity-100" : "opacity-0"
+            )}
           />
           
           {/* Content */}
           <div className="relative flex flex-col justify-end h-full p-6 text-white">
+            {/* Title - Always visible */}
             <h3 className="text-3xl font-bold tracking-tight">
               {location} <span className="text-2xl ml-1">{flag}</span>
             </h3>
-            <p className="text-sm text-white/80 mt-1 font-medium">{stats}</p>
-
-            {/* Explore Button */}
+            
+            {/* Details - Only visible when expanded */}
             <div
               className={cn(
-                "mt-8 flex items-center justify-between bg-[hsl(var(--theme-color)/0.2)] backdrop-blur-md border border-[hsl(var(--theme-color)/0.3)] rounded-lg px-4 py-3 transition-all duration-300",
-                isActive && "bg-[hsl(var(--theme-color)/0.4)] border-[hsl(var(--theme-color)/0.5)]"
+                "overflow-hidden transition-all duration-500 ease-in-out",
+                isActive ? "max-h-48 opacity-100 translate-y-0 mt-2" : "max-h-0 opacity-0 translate-y-2 mt-0"
               )}
             >
-              <span className="text-sm font-semibold tracking-wide">Explore Now</span>
-              <ArrowRight className={cn("h-4 w-4 transform transition-transform duration-300", isActive && "translate-x-1")} />
+              <div className="space-y-2">
+                {/* Main stats line */}
+                <p className="text-sm text-white/90 font-medium leading-relaxed">
+                  {stats}
+                </p>
+                
+                {/* Additional concise details */}
+                {location === "Family Adventures" && (
+                  <p className="text-xs text-white/75 leading-relaxed">
+                    Perfect for families with interactive workshops, educational activities, and entertainment for all ages.
+                  </p>
+                )}
+                
+                {location === "Electric Nights" && (
+                  <p className="text-xs text-white/75 leading-relaxed">
+                    Nighttime entertainment with live performances, spectacular shows, and dancing under the stars (18+).
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </a>

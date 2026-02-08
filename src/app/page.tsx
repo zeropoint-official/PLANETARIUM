@@ -580,7 +580,7 @@ export default function Home() {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-white/60">
                         <div className="flex items-center gap-2">
                           <Calendar className="w-4 h-4 text-violet-400/70" />
-                          <span>June 14-15, 2026</span>
+                          <span>3-4 October</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-cyan-400/70" />

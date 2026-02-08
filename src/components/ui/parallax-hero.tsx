@@ -85,14 +85,23 @@ export function ParallaxHero() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_90%_80%,rgba(6,182,212,0.05),transparent_40%)]" />
             </div>
 
+            {/* Mobile Logo - Top Left */}
+            <div className="absolute top-4 left-4 z-[6] sm:hidden">
+              <img 
+                src="/Memora logo.png" 
+                alt="Memora Logo" 
+                className="h-8 w-auto object-contain"
+              />
+            </div>
+
             {/* Layer 3: Title Content */}
             <div 
               data-parallax-layer="3" 
               className="absolute z-[5] top-[3%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
-                {/* Logo */}
-                <div className="flex justify-center mb-4 sm:mb-6">
+                {/* Logo - Hidden on mobile, visible on desktop */}
+                <div className="hidden sm:flex justify-center mb-4 sm:mb-6">
                   <img 
                     src="/Memora logo.png" 
                     alt="Memora Logo" 
@@ -160,7 +169,7 @@ export function ParallaxHero() {
                     
                     {/* Date & Location */}
                     <div className="flex items-center gap-2 mt-3 text-[10px] text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>June 14-15</span>
+                      <span>3-4 October</span>
                       <span className="text-violet-400/40">·</span>
                       <span>Nicosia, Cyprus</span>
                     </div>
@@ -211,7 +220,7 @@ export function ParallaxHero() {
                     
                     {/* Date & Location */}
                     <div className="flex items-center gap-3 text-xs text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>June 14-15, 2026</span>
+                      <span>3-4 October</span>
                       <span className="text-violet-400/30">·</span>
                       <span>Nicosia, Cyprus</span>
                     </div>
@@ -435,7 +444,7 @@ export function ParallaxHero() {
             </p>
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.02] border border-white/[0.05]">
               <Calendar className="w-4 h-4 text-cyan-400/70" />
-              <span className="text-white/50 text-[13px] font-medium tracking-wide">June 14-15, 2026</span>
+              <span className="text-white/50 text-[13px] font-medium tracking-wide">3-4 October</span>
               <div className="w-px h-4 bg-white/[0.08]" />
               <MapPin className="w-4 h-4 text-cyan-400/70" />
               <span className="text-white/50 text-[13px] font-medium tracking-wide">Nicosia, Cyprus</span>
