@@ -34,7 +34,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
       <section
         ref={sectionRef}
         className={cn(
-          'relative w-full min-h-screen py-32 overflow-hidden',
+          'relative w-full pt-8 md:pt-12 pb-12 md:pb-16 overflow-hidden',
           className
         )}
         {...props}
@@ -138,7 +138,7 @@ const HeroCollage = React.forwardRef<HTMLDivElement, HeroCollageProps>(
         {/* Center Content */}
         <motion.div 
           style={{ scale, opacity }}
-          className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] px-4 py-12 md:py-32"
+          className="relative z-10 flex flex-col items-center justify-center px-4 py-8 md:py-16"
         >
           {/* Badge */}
           <motion.div

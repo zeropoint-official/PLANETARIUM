@@ -306,3 +306,78 @@
 .animate-rotate-subtle {
   animation: rotate-subtle 4s ease-in-out infinite;
 }
+
+/* Smooth breath animation - fades out completely */
+@keyframes breath-smooth {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-breath-smooth {
+  animation: breath-smooth 2s ease-in-out infinite;
+}
+
+/* Slow spin for animated gradient borders */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+/* Slow gentle pulse for ambient glow */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Shimmer line scanning across stat card tops */
+@keyframes shimmer-line {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-shimmer-line {
+  animation: shimmer-line 3s ease-in-out infinite;
+}
+
+.animate-shimmer-line-delay-1 {
+  animation: shimmer-line 3s ease-in-out 0.5s infinite;
+}
+
+.animate-shimmer-line-delay-2 {
+  animation: shimmer-line 3s ease-in-out 1s infinite;
+}
+
+.animate-shimmer-line-delay-3 {
+  animation: shimmer-line 3s ease-in-out 1.5s infinite;
+}

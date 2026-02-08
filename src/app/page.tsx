@@ -380,7 +380,7 @@ export default function Home() {
         </section>
 
         {/* Ticket Purchase Section */}
-        <section className="w-full py-20 px-4 relative">
+        <section id="tickets" className="w-full py-20 px-4 relative">
           <div className="max-w-6xl mx-auto">
             {/* Section divider */}
             <div className="flex items-center justify-center gap-4 mb-12">

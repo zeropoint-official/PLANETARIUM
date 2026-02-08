@@ -3,11 +3,10 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar, MapPin, Sparkles, ChevronDown, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, Sparkles, ChevronDown, ArrowRight, Telescope, Music, Users } from 'lucide-react';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { NumberTicker } from '@/components/ui/number-ticker';
-import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { OnboardingChecklist } from '@/components/ui/onboarding-checklist';
 import { DestinationCard } from '@/components/ui/card-21';
 
@@ -92,9 +91,18 @@ export function ParallaxHero() {
               className="absolute z-[5] top-[3%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
+                {/* Logo */}
+                <div className="flex justify-center mb-4 sm:mb-6">
+                  <img 
+                    src="/Memora logo.png" 
+                    alt="Memora Logo" 
+                    className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain"
+                  />
+                </div>
+                
                 {/* Pre-title */}
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-breath-smooth" />
                   <span className="text-[9px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-white/60 uppercase">
                     Cyprus' Most Epic 2-Day Event
                   </span>
@@ -124,79 +132,89 @@ export function ParallaxHero() {
                   Join Cyprus' most epic celebration — two days of music, art, and unforgettable experiences
                 </p>
                 
-                {/* Ticket CTA with Magic UI ShimmerButton - Mobile layout with astronaut */}
-                <div className="flex flex-col items-center mb-0 sm:mb-20 mt-2 sm:mt-0">
-                  {/* Mobile: Horizontal row with CTA and astronaut */}
-                  <div className="sm:hidden flex flex-col items-center justify-center gap-0 relative w-full mt-2">
-                    {/* Counter badge - mobile version with floating animation */}
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm z-10 animate-float-subtle -mb-12">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
-                        30 days left
-                      </span>
+                {/* Ticket CTA - Premium Animated Gradient Border Button */}
+                <div className="flex flex-col items-center mt-4 sm:mt-0 mb-0 sm:mb-20">
+                  
+                  {/* ── Mobile Layout ── */}
+                  <div className="sm:hidden flex flex-col items-center relative w-full">
+                    {/* CTA Button */}
+                    <a href="#tickets" className="group relative z-10">
+                      {/* Ambient glow behind button */}
+                      <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-600/30 via-fuchsia-500/20 to-cyan-500/30 blur-2xl animate-pulse-slow pointer-events-none" />
+                      
+                      {/* Animated gradient border wrapper */}
+                      <div className="relative rounded-full p-[1.5px] overflow-hidden">
+                        {/* Spinning conic gradient for border */}
+                        <div className="absolute inset-[-200%] animate-spin-slow bg-[conic-gradient(from_0deg,#a855f7_0%,transparent_20%,#06b6d4_33%,transparent_53%,#ec4899_66%,transparent_86%,#a855f7_100%)]" />
+                        
+                        {/* Button interior */}
+                        <div className="relative rounded-full bg-[#0a0a18]/95 backdrop-blur-2xl px-6 py-3 flex items-center gap-2.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                          <span className="text-sm font-semibold text-white tracking-wide">Get Tickets</span>
+                          <div className="w-px h-4 bg-white/10" />
+                          <span className="text-xs text-violet-300/80 font-medium">€25</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-violet-400/80 flex-shrink-0" />
+                        </div>
+                      </div>
+                    </a>
+                    
+                    {/* Date & Location */}
+                    <div className="flex items-center gap-2 mt-3 text-[10px] text-white/30 tracking-[0.15em] uppercase font-medium">
+                      <span>June 14-15</span>
+                      <span className="text-violet-400/40">·</span>
+                      <span>Nicosia, Cyprus</span>
                     </div>
                     
-                    {/* CTA and Astronaut Container */}
-                    <div className="flex items-center justify-center gap-2 relative w-full">
-                      {/* CTA Button Container with rotation animation */}
-                      <div className="flex flex-col items-center gap-2 relative z-10 animate-rotate-subtle" style={{ transformOrigin: 'left center' }}>
-                        {/* Magic UI Shimmer Button */}
-                        <ShimmerButton 
-                          className="shadow-2xl whitespace-nowrap"
-                          shimmerColor="#a855f7"
-                          shimmerSize="0.08em"
-                          background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
-                        >
-                          <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-nowrap tracking-wide">
-                            Get Your Tickets
-                            <ArrowRight className="w-4 h-4 text-fuchsia-400/80 flex-shrink-0" />
-                          </span>
-                        </ShimmerButton>
-                      </div>
+                    {/* Mobile Astronaut - floating below CTA */}
+                    <div className="relative w-[260px] h-[260px] animate-float-smooth -mt-3" style={{ animationDelay: '0.3s' }}>
+                      {/* Glow behind astronaut */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-violet-600/30 via-fuchsia-500/20 to-cyan-400/25 blur-2xl animate-pulse" />
                       
-                      {/* Mobile Astronaut - floating next to CTA */}
-                      <div className="relative w-[280px] h-[280px] animate-float-smooth" style={{ animationDelay: '0.3s', position: 'relative', top: '35px' }}>
-                        {/* Enhanced glow for mobile */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-violet-600/35 via-fuchsia-500/25 to-cyan-400/30 blur-2xl animate-pulse" />
-                        
-                        <img
-                          src="/austronaunt.png"
-                          alt="Cosmic Explorer"
-                          className="relative w-full h-full object-contain drop-shadow-2xl"
-                          style={{
-                            filter: 'drop-shadow(0 0 25px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 50px rgba(34, 211, 238, 0.4))'
-                          }}
-                        />
-                        
-                        {/* Decorative sparkles around mobile astronaut */}
-                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75" />
-                        <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-fuchsia-400 rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }} />
-                        <div className="absolute top-1/2 -right-4 w-1.5 h-1.5 bg-violet-400 rounded-full animate-ping opacity-60" style={{ animationDelay: '1s' }} />
-                      </div>
+                      <img
+                        src="/austronaunt.png"
+                        alt="Cosmic Explorer"
+                        className="relative w-full h-full object-contain drop-shadow-2xl"
+                        style={{
+                          filter: 'drop-shadow(0 0 25px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 50px rgba(34, 211, 238, 0.4))'
+                        }}
+                      />
+                      
+                      {/* Decorative sparkles */}
+                      <div className="absolute -top-2 -right-2 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75" />
+                      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-fuchsia-400 rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }} />
+                      <div className="absolute top-1/2 -right-4 w-1.5 h-1.5 bg-violet-400 rounded-full animate-ping opacity-60" style={{ animationDelay: '1s' }} />
                     </div>
                   </div>
                   
-                  {/* Desktop: CTA only */}
-                  <div className="hidden sm:flex flex-col items-center gap-2 relative z-10">
-                    {/* Counter badge on top - desktop only */}
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10 items-center gap-1.5 px-3 py-1 rounded-full bg-[#08080f]/80 border border-white/[0.06] whitespace-nowrap backdrop-blur-sm animate-float-subtle flex">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] text-white/50 font-medium tracking-[0.15em] uppercase">
-                        30 days left
-                      </span>
+                  {/* ── Desktop Layout ── */}
+                  <div className="hidden sm:flex flex-col items-center gap-4 relative z-10">
+                    {/* CTA Button */}
+                    <a href="#tickets" className="group relative">
+                      {/* Ambient glow behind button */}
+                      <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-violet-600/20 via-fuchsia-500/15 to-cyan-500/20 blur-3xl animate-pulse-slow opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                      
+                      {/* Animated gradient border wrapper */}
+                      <div className="relative rounded-full p-[1.5px] overflow-hidden">
+                        {/* Spinning conic gradient for border */}
+                        <div className="absolute inset-[-200%] animate-spin-slow bg-[conic-gradient(from_0deg,#a855f7_0%,transparent_20%,#06b6d4_33%,transparent_53%,#ec4899_66%,transparent_86%,#a855f7_100%)]" />
+                        
+                        {/* Button interior */}
+                        <div className="relative rounded-full bg-[#0a0a18]/90 backdrop-blur-2xl px-8 py-4 flex items-center gap-4 group-hover:bg-[#0a0a18]/80 transition-colors duration-300">
+                          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                          <span className="text-base font-semibold text-white tracking-wide">Get Tickets</span>
+                          <div className="w-px h-5 bg-white/10" />
+                          <span className="text-sm text-violet-300/80 font-medium">From €25</span>
+                          <ArrowRight className="w-4 h-4 text-violet-400 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+                        </div>
+                      </div>
+                    </a>
+                    
+                    {/* Date & Location */}
+                    <div className="flex items-center gap-3 text-xs text-white/30 tracking-[0.15em] uppercase font-medium">
+                      <span>June 14-15, 2026</span>
+                      <span className="text-violet-400/30">·</span>
+                      <span>Nicosia, Cyprus</span>
                     </div>
-                    {/* Magic UI Shimmer Button */}
-                    <ShimmerButton 
-                      className="shadow-2xl whitespace-nowrap"
-                      shimmerColor="#a855f7"
-                      shimmerSize="0.08em"
-                      background="linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%)"
-                    >
-                      <span className="flex items-center gap-2.5 text-sm font-medium text-white/90 whitespace-nowrap tracking-wide">
-                        Get Your Tickets
-                        <ArrowRight className="w-4 h-4 text-fuchsia-400/80 flex-shrink-0" />
-                      </span>
-                    </ShimmerButton>
                   </div>
                 </div>
               </div>
@@ -238,7 +256,7 @@ export function ParallaxHero() {
       </section>
 
       {/* Highlights Section - Seamless continuation */}
-      <section className="relative z-10 pt-0 pb-16 sm:pt-2 sm:pb-24 px-6">
+      <section className="relative z-10 pt-0 pb-6 sm:pt-2 sm:pb-8 px-6">
         {/* Background that fades out very smoothly */}
         <div className="absolute inset-x-0 top-0 bottom-[400px] bg-[#030308]" />
         <div className="absolute inset-x-0 bottom-0 h-[450px] pointer-events-none" style={{ background: 'linear-gradient(to bottom, #030308 0%, rgba(3,3,8,0.8) 25%, rgba(3,3,8,0.5) 50%, rgba(3,3,8,0.2) 75%, transparent 100%)' }} />
@@ -253,7 +271,7 @@ export function ParallaxHero() {
           </div>
 
           {/* Prepare for Your Cosmic Adventure with What to Expect */}
-          <div className="mb-4">
+          <div className="mb-12 md:mb-16">
             <OnboardingChecklist
               title=""
               description=""
@@ -263,88 +281,131 @@ export function ParallaxHero() {
             />
           </div>
 
-          {/* Minimal Centered Stats */}
-          <div className="relative max-w-2xl mx-auto mb-12">
-            {/* Stats Items */}
-            <div className="space-y-10 md:space-y-12">
+          {/* Stats Dashboard Grid */}
+          <div className="relative max-w-5xl mx-auto mb-16 md:mb-24">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+              
               {/* Stat 1: Experience Zones */}
-              <div className="group relative text-center">
-                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
-                  Experience Zones
+              <div className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] p-5 md:p-7 hover:border-violet-500/20 transition-all duration-500">
+                {/* Top accent line */}
+                <div className="absolute top-0 inset-x-0 h-px">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
+                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-violet-300/80 to-transparent animate-shimmer-line" />
                 </div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
-                  <NumberTicker value={15} className="text-white" delay={0.5} />
-                  <span className="text-violet-400/70 ml-2 text-4xl md:text-5xl font-normal">+</span>
-                </div>
-                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
-                  Unique interactive areas and immersive spaces
-                </div>
-                {/* Separator */}
-                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
-                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                  <div className="w-1 h-1 rounded-full bg-white/20" />
-                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
-                </div>
-              </div>
-
-              {/* Stat 2: Performances */}
-              <div className="group relative text-center">
-                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
-                  Live Entertainment
-                </div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
-                  <NumberTicker value={50} className="text-white" delay={1.0} />
-                  <span className="text-cyan-400/70 ml-2 text-4xl md:text-5xl font-normal">+</span>
-                </div>
-                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
-                  World-class DJs, live bands, and performances
-                </div>
-                {/* Separator */}
-                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
-                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                  <div className="w-1 h-1 rounded-full bg-white/20" />
-                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
+                {/* Hover glow */}
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-40 h-24 bg-violet-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-violet-500/10 border border-violet-500/15 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-violet-500/15 group-hover:border-violet-500/25 transition-colors duration-500">
+                    <Telescope className="w-3.5 h-3.5 md:w-4 md:h-4 text-violet-400" />
+                  </div>
+                  
+                  {/* Number */}
+                  <div className="flex items-baseline gap-1 mb-1.5">
+                    <NumberTicker value={15} className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight" delay={0.3} />
+                    <span className="text-lg md:text-xl text-violet-400/60 font-light">+</span>
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
+                    Experience Zones
+                  </div>
                 </div>
               </div>
-
-              {/* Stat 3: Expected Guests */}
-              <div className="group relative text-center">
-                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
-                  Expected Attendance
+              
+              {/* Stat 2: Live Entertainment */}
+              <div className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] p-5 md:p-7 hover:border-cyan-500/20 transition-all duration-500">
+                {/* Top accent line */}
+                <div className="absolute top-0 inset-x-0 h-px">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-cyan-300/80 to-transparent animate-shimmer-line-delay-1" />
                 </div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
-                  <NumberTicker value={8} className="text-white" delay={1.5} />
-                  <span className="text-amber-400/70 ml-2 text-4xl md:text-5xl font-normal">K+</span>
-                </div>
-                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
-                  Join thousands of festival-goers from around the world
-                </div>
-                {/* Separator */}
-                <div className="mt-6 md:mt-8 flex items-center justify-center gap-4">
-                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                  <div className="w-1 h-1 rounded-full bg-white/20" />
-                  <div className="h-px w-16 bg-gradient-to-l from-transparent via-white/10 to-transparent" />
-                </div>
-              </div>
-
-              {/* Stat 4: Days */}
-              <div className="group relative text-center">
-                <div className="text-xs text-white/40 uppercase tracking-[0.2em] font-medium mb-4">
-                  Event Duration
-                </div>
-                <div className="text-6xl md:text-7xl font-bold text-white mb-3">
-                  <NumberTicker value={2} className="text-white" delay={2.0} />
-                  <span className="text-violet-400/70 ml-2 text-4xl md:text-5xl font-normal">Days</span>
-                </div>
-                <div className="text-sm md:text-base text-white/50 max-w-md mx-auto">
-                  Two full days of immersive experiences
+                {/* Hover glow */}
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-40 h-24 bg-cyan-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/15 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-cyan-500/15 group-hover:border-cyan-500/25 transition-colors duration-500">
+                    <Music className="w-3.5 h-3.5 md:w-4 md:h-4 text-cyan-400" />
+                  </div>
+                  
+                  {/* Number */}
+                  <div className="flex items-baseline gap-1 mb-1.5">
+                    <NumberTicker value={50} className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight" delay={0.6} />
+                    <span className="text-lg md:text-xl text-cyan-400/60 font-light">+</span>
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
+                    Live Performances
+                  </div>
                 </div>
               </div>
+              
+              {/* Stat 3: Attendance */}
+              <div className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] p-5 md:p-7 hover:border-amber-500/20 transition-all duration-500">
+                {/* Top accent line */}
+                <div className="absolute top-0 inset-x-0 h-px">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-amber-300/80 to-transparent animate-shimmer-line-delay-2" />
+                </div>
+                {/* Hover glow */}
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-40 h-24 bg-amber-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-amber-500/15 group-hover:border-amber-500/25 transition-colors duration-500">
+                    <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-amber-400" />
+                  </div>
+                  
+                  {/* Number */}
+                  <div className="flex items-baseline gap-1 mb-1.5">
+                    <NumberTicker value={8} className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight" delay={0.9} />
+                    <span className="text-lg md:text-xl text-amber-400/60 font-light">K+</span>
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
+                    Expected Guests
+                  </div>
+                </div>
+              </div>
+              
+              {/* Stat 4: Duration */}
+              <div className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] p-5 md:p-7 hover:border-fuchsia-500/20 transition-all duration-500">
+                {/* Top accent line */}
+                <div className="absolute top-0 inset-x-0 h-px">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-fuchsia-500/40 to-transparent" />
+                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-fuchsia-300/80 to-transparent animate-shimmer-line-delay-3" />
+                </div>
+                {/* Hover glow */}
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-40 h-24 bg-fuchsia-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/15 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-fuchsia-500/15 group-hover:border-fuchsia-500/25 transition-colors duration-500">
+                    <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 text-fuchsia-400" />
+                  </div>
+                  
+                  {/* Number */}
+                  <div className="flex items-baseline gap-1 mb-1.5">
+                    <NumberTicker value={2} className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight" delay={1.2} />
+                    <span className="text-lg md:text-xl text-fuchsia-400/60 font-light ml-1">Days</span>
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
+                    Non-Stop Festival
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
 
           {/* Festival Cards - Daytime & Nighttime */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12 max-w-5xl mx-auto">
             <div className="h-[450px]">
               <DestinationCard
                 imageUrl="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&auto=format&fit=crop&q=90"
