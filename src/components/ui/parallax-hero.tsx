@@ -85,30 +85,12 @@ export function ParallaxHero() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_90%_80%,rgba(6,182,212,0.05),transparent_40%)]" />
             </div>
 
-            {/* Mobile Logo - Top Left */}
-            <div className="absolute top-4 left-4 z-[10] sm:hidden pointer-events-none">
-              <img 
-                src="/Memora logo.png" 
-                alt="Memora Logo" 
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-
             {/* Layer 3: Title Content */}
             <div 
               data-parallax-layer="3" 
               className="absolute z-[5] top-[12%] sm:top-[12%] md:top-[15%] left-0 right-0 flex flex-col items-center will-change-transform px-4 sm:px-6"
             >
               <div className="max-w-4xl mx-auto text-center w-full">
-                {/* Logo - Hidden on mobile, visible on desktop */}
-                <div className="hidden sm:flex justify-center mb-4 sm:mb-6">
-                  <img 
-                    src="/Memora logo.png" 
-                    alt="Memora Logo" 
-                    className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain"
-                  />
-                </div>
-                
                 {/* Pre-title */}
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-breath-smooth" />
@@ -161,7 +143,7 @@ export function ParallaxHero() {
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
                           <span className="text-sm font-semibold text-white tracking-wide">Get Tickets</span>
                           <div className="w-px h-4 bg-white/10" />
-                          <span className="text-xs text-violet-300/80 font-medium">€25</span>
+                          <span className="text-xs text-violet-300/80 font-medium">€20</span>
                           <ArrowRight className="w-3.5 h-3.5 text-violet-400/80 flex-shrink-0" />
                         </div>
                       </div>
@@ -169,7 +151,7 @@ export function ParallaxHero() {
                     
                     {/* Date & Location */}
                     <div className="flex items-center gap-2 mt-3 text-[10px] text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>3-4 October</span>
+                      <span>9-10 October</span>
                       <span className="text-violet-400/40">·</span>
                       <span>Nicosia, Cyprus</span>
                     </div>
@@ -212,7 +194,7 @@ export function ParallaxHero() {
                           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
                           <span className="text-base font-semibold text-white tracking-wide">Get Tickets</span>
                           <div className="w-px h-5 bg-white/10" />
-                          <span className="text-sm text-violet-300/80 font-medium">From €25</span>
+                          <span className="text-sm text-violet-300/80 font-medium">From €20</span>
                           <ArrowRight className="w-4 h-4 text-violet-400 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
                         </div>
                       </div>
@@ -220,7 +202,7 @@ export function ParallaxHero() {
                     
                     {/* Date & Location */}
                     <div className="flex items-center gap-3 text-xs text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>3-4 October</span>
+                      <span>9-10 October</span>
                       <span className="text-violet-400/30">·</span>
                       <span>Nicosia, Cyprus</span>
                     </div>
@@ -444,7 +426,7 @@ export function ParallaxHero() {
             </p>
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.02] border border-white/[0.05]">
               <Calendar className="w-4 h-4 text-cyan-400/70" />
-              <span className="text-white/50 text-[13px] font-medium tracking-wide">3-4 October</span>
+              <span className="text-white/50 text-[13px] font-medium tracking-wide">9-10 October</span>
               <div className="w-px h-4 bg-white/[0.08]" />
               <MapPin className="w-4 h-4 text-cyan-400/70" />
               <span className="text-white/50 text-[13px] font-medium tracking-wide">Nicosia, Cyprus</span>

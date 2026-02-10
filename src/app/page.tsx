@@ -22,7 +22,7 @@ export default function Home() {
     phone: '',
   });
 
-  const adultPrice = 25;
+  const adultPrice = 20;
   const childPrice = 0;
   const totalPrice = adultTickets * adultPrice + childTickets * childPrice;
 
@@ -341,37 +341,39 @@ export default function Home() {
       {/* All sections after hero - content scrolls over fixed background */}
       <div className="relative z-10 w-full overflow-x-hidden">
         {/* Daytime Activities Section */}
-        <HeroCollage
-          title={
-            <>
-              <span className="block text-white">Daytime</span>
-              <SparklesText 
-                className="block"
-                sparklesCount={8}
-                colors={{ first: '#a855f7', second: '#22d3ee' }}
-              >
-                <AuroraText
-                  colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
-                  speed={1.2}
+        <section id="activities">
+          <HeroCollage
+            title={
+              <>
+                <span className="block text-white">Daytime</span>
+                <SparklesText 
+                  className="block"
+                  sparklesCount={8}
+                  colors={{ first: '#a855f7', second: '#22d3ee' }}
                 >
-                  Adventures
-                </AuroraText>
-              </SparklesText>
-            </>
-          }
-          subtitle="From sunrise to sunset, explore immersive VR experiences, interactive workshops, telescope observations, cosmic games, and exclusive daytime events. Discover the universe in a whole new light."
-          stats={daytimeStats}
-          images={daytimeImages}
-          accentColor="text-violet-500"
-        />
+                  <AuroraText
+                    colors={['#a855f7', '#ec4899', '#06b6d4', '#8b5cf6']}
+                    speed={1.2}
+                  >
+                    Adventures
+                  </AuroraText>
+                </SparklesText>
+              </>
+            }
+            subtitle="From sunrise to sunset, explore immersive VR experiences, interactive workshops, telescope observations, cosmic games, and exclusive daytime events. Discover the universe in a whole new light."
+            stats={daytimeStats}
+            images={daytimeImages}
+            accentColor="text-violet-500"
+          />
+        </section>
 
         {/* Event Timeline */}
-        <div className="w-full">
+        <section id="schedule" className="w-full">
           <Timeline data={timelineData} />
-        </div>
+        </section>
 
         {/* Preparation Checklist */}
-        <section className="w-full flex items-center justify-center p-4 py-16">
+        <section id="experience" className="w-full flex items-center justify-center p-4 py-16">
           <div className="max-w-6xl mx-auto w-full">
             <ExpandableFestivalCard 
               items={checklistData.items}
@@ -381,6 +383,8 @@ export default function Home() {
 
         {/* Ticket Purchase Section */}
         <section id="tickets" className="w-full py-20 px-4 relative">
+          {/* Location subsection */}
+          <div id="location" className="absolute -top-20" />
           <div className="max-w-6xl mx-auto">
             {/* Section divider */}
             <div className="flex items-center justify-center gap-4 mb-12">
@@ -420,8 +424,8 @@ export default function Home() {
                             <div className="w-2 h-2 rounded-full bg-violet-500" />
                             <h4 className="text-lg font-bold text-white">Adult</h4>
                           </div>
-                          <div className="text-2xl md:text-3xl font-black text-violet-400 mb-1">€25</div>
-                          <div className="text-xs text-white/50">Ages 13+</div>
+                          <div className="text-2xl md:text-3xl font-black text-violet-400 mb-1">€20</div>
+                          <div className="text-xs text-white/50">Ages 18+</div>
                         </div>
                         <div className="flex items-center gap-3">
                           <button
@@ -461,7 +465,7 @@ export default function Home() {
                             <h4 className="text-lg font-bold text-white">Child</h4>
                           </div>
                           <div className="text-2xl md:text-3xl font-black text-cyan-400 mb-1">Free</div>
-                          <div className="text-xs text-white/50">Ages 12 & under</div>
+                          <div className="text-xs text-white/50">Ages 17 & under</div>
                         </div>
                         <div className="flex items-center gap-3">
                           <button
@@ -580,7 +584,7 @@ export default function Home() {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-white/60">
                         <div className="flex items-center gap-2">
                           <Calendar className="w-4 h-4 text-violet-400/70" />
-                          <span>3-4 October</span>
+                          <span>9-10 October</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-cyan-400/70" />
