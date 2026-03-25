@@ -215,7 +215,7 @@ export function Header() {
                   {/* Event Info */}
                   <div className="mt-4 text-center">
                     <p className="text-xs text-white/40">
-                      9-10 October • Nicosia, Cyprus
+                      10-11 October • Nicosia, Cyprus
                     </p>
                   </div>
                 </div>

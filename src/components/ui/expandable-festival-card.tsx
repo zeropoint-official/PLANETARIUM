@@ -73,10 +73,10 @@ export const ExpandableFestivalCard = ({
   }, [shouldExpand, isMobile, isInitialized, scrollYProgress]);
 
   const highlights = [
-    { icon: Telescope, label: "Stargazing", color: "bg-cyan-500" },
-    { icon: Gamepad2, label: "VR Adventures", color: "bg-violet-500" },
-    { icon: Music, label: "Live Music", color: "bg-amber-500" },
-    { icon: Sparkles, label: "More", color: "bg-pink-500" },
+    { icon: Telescope, label: "Kids Zone", color: "bg-cyan-500" },
+    { icon: Gamepad2, label: "Live Sports", color: "bg-violet-500" },
+    { icon: Music, label: "DJ Parties", color: "bg-amber-500" },
+    { icon: Sparkles, label: "Vendors", color: "bg-pink-500" },
   ];
 
   return (
@@ -145,17 +145,17 @@ export const ExpandableFestivalCard = ({
               >
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-sm font-semibold text-white mb-2">Daytime Activities</h4>
+                    <h4 className="text-sm font-semibold text-white mb-2">Daytime Experience</h4>
                     <p className="text-sm text-white/70 leading-relaxed">
-                      Immerse yourself in VR space adventures, explore interactive planetarium shows, 
-                      participate in astronomy workshops, and enjoy family-friendly activities throughout the day.
+                      A kids zone with board games, arts & crafts, VR, and immersive dome projections. Live sports
+                      demonstrations, dance performances, nutrition workshops, and a full vendor market with street food and local fashion.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-white mb-2">Nighttime Events</h4>
+                    <h4 className="text-sm font-semibold text-white mb-2">Night Parties</h4>
                     <p className="text-sm text-white/70 leading-relaxed">
-                      As the sun sets, experience world-class DJ performances, telescope stargazing sessions 
-                      with expert astronomers, fire performances, and an unforgettable dance floor under the cosmos.
+                      Once the sun sets, the planetarium transforms into one of Cyprus' most unique nightlife venues.
+                      Each evening features a different party with renowned DJs and event organizers.
                     </p>
                   </div>
                 </div>

@@ -70,7 +70,7 @@ export function ParallaxHero() {
                 playsInline
                 className="w-full h-[120%] object-cover brightness-[0.65] saturate-[1.3] contrast-[1.1]"
               >
-                <source src="/bg-video.mp4" type="video/mp4" />
+                <source src="https://pub-aa0fd8d68b214268a209deacc9084bf2.r2.dev/0326.mp4" type="video/mp4" />
               </video>
               {/* Noise texture overlay - reduced opacity */}
               <div className="absolute inset-0 opacity-[0.015] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
@@ -95,7 +95,7 @@ export function ParallaxHero() {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-8 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-breath-smooth" />
                   <span className="text-[9px] sm:text-[11px] font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-white/60 uppercase">
-                    Cyprus' Most Epic 2-Day Event
+                    2-Day Planetarium Takeover
                   </span>
                 </div>
                 
@@ -120,7 +120,7 @@ export function ParallaxHero() {
                 
                 {/* Tagline */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal max-w-lg mx-auto mb-3 sm:mb-6 leading-relaxed text-white/40 tracking-wide px-2">
-                  Join Cyprus' most epic celebration — two days of music, art, and unforgettable experiences
+                  Two days packed with sports, food, dance, great vibes and even extraordinary parties.
                 </p>
                 
                 {/* Ticket CTA - Premium Animated Gradient Border Button */}
@@ -128,16 +128,23 @@ export function ParallaxHero() {
                   
                   {/* ── Mobile Layout ── */}
                   <div className="sm:hidden flex flex-col items-center relative w-full">
+                    {/* Date & Location */}
+                    <div className="flex items-center gap-2 mb-3 text-[10px] text-white/30 tracking-[0.15em] uppercase font-medium">
+                      <span>10-11 October</span>
+                      <span className="text-violet-400/40">·</span>
+                      <span>Nicosia, Cyprus</span>
+                    </div>
+
                     {/* CTA Button */}
                     <a href="#tickets" className="group relative z-10">
                       {/* Ambient glow behind button */}
                       <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-600/30 via-fuchsia-500/20 to-cyan-500/30 blur-2xl animate-pulse-slow pointer-events-none" />
-                      
+
                       {/* Animated gradient border wrapper */}
                       <div className="relative rounded-full p-[1.5px] overflow-hidden">
                         {/* Spinning conic gradient for border */}
                         <div className="absolute inset-[-200%] animate-spin-slow bg-[conic-gradient(from_0deg,#a855f7_0%,transparent_20%,#06b6d4_33%,transparent_53%,#ec4899_66%,transparent_86%,#a855f7_100%)]" />
-                        
+
                         {/* Button interior */}
                         <div className="relative rounded-full bg-[#0a0a18]/95 backdrop-blur-2xl px-6 py-3 flex items-center gap-2.5">
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
@@ -148,13 +155,6 @@ export function ParallaxHero() {
                         </div>
                       </div>
                     </a>
-                    
-                    {/* Date & Location */}
-                    <div className="flex items-center gap-2 mt-3 text-[10px] text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>9-10 October</span>
-                      <span className="text-violet-400/40">·</span>
-                      <span>Nicosia, Cyprus</span>
-                    </div>
                     
                     {/* Mobile Astronaut - floating below CTA */}
                     <div className="relative w-[260px] h-[260px] animate-float-smooth -mt-3" style={{ animationDelay: '0.3s' }}>
@@ -179,16 +179,23 @@ export function ParallaxHero() {
                   
                   {/* ── Desktop Layout ── */}
                   <div className="hidden sm:flex flex-col items-center gap-4 relative z-10">
+                    {/* Date & Location */}
+                    <div className="flex items-center gap-3 text-xs text-white/30 tracking-[0.15em] uppercase font-medium">
+                      <span>10-11 October</span>
+                      <span className="text-violet-400/30">·</span>
+                      <span>Nicosia, Cyprus</span>
+                    </div>
+
                     {/* CTA Button */}
                     <a href="#tickets" className="group relative">
                       {/* Ambient glow behind button */}
                       <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-violet-600/20 via-fuchsia-500/15 to-cyan-500/20 blur-3xl animate-pulse-slow opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                      
+
                       {/* Animated gradient border wrapper */}
                       <div className="relative rounded-full p-[1.5px] overflow-hidden">
                         {/* Spinning conic gradient for border */}
                         <div className="absolute inset-[-200%] animate-spin-slow bg-[conic-gradient(from_0deg,#a855f7_0%,transparent_20%,#06b6d4_33%,transparent_53%,#ec4899_66%,transparent_86%,#a855f7_100%)]" />
-                        
+
                         {/* Button interior */}
                         <div className="relative rounded-full bg-[#0a0a18]/90 backdrop-blur-2xl px-8 py-4 flex items-center gap-4 group-hover:bg-[#0a0a18]/80 transition-colors duration-300">
                           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
@@ -199,13 +206,6 @@ export function ParallaxHero() {
                         </div>
                       </div>
                     </a>
-                    
-                    {/* Date & Location */}
-                    <div className="flex items-center gap-3 text-xs text-white/30 tracking-[0.15em] uppercase font-medium">
-                      <span>9-10 October</span>
-                      <span className="text-violet-400/30">·</span>
-                      <span>Nicosia, Cyprus</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export function ParallaxHero() {
         </div>
 
         {/* Extended gradient fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-[35%] sm:h-[40%] bg-gradient-to-t from-[#030308] via-[#030308]/80 to-transparent z-[7] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-[20%] sm:h-[25%] bg-gradient-to-t from-[#030308] via-[#030308]/80 to-transparent z-[7] pointer-events-none" />
       </section>
 
       {/* Highlights Section - Seamless continuation */}
@@ -300,7 +300,7 @@ export function ParallaxHero() {
                   
                   {/* Label */}
                   <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
-                    Experience Zones
+                    Activity Zones
                   </div>
                 </div>
               </div>
@@ -329,7 +329,7 @@ export function ParallaxHero() {
                   
                   {/* Label */}
                   <div className="text-[10px] md:text-[11px] text-white/35 uppercase tracking-[0.15em] font-medium">
-                    Live Performances
+                    Live Acts & Demos
                   </div>
                 </div>
               </div>
@@ -400,9 +400,9 @@ export function ParallaxHero() {
             <div className="h-[450px]">
               <DestinationCard
                 imageUrl="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&auto=format&fit=crop&q=90"
-                location="Family Adventures"
+                location="Daytime Experience"
                 flag="☀️"
-                stats="VR Experiences • Planetarium Shows • Kids Zone • Food Trucks"
+                stats="Kids Zone • Live Sports • Dance Shows • Vendor Market"
                 href="#daytime"
                 themeColor="270 91% 65%"
               />
@@ -410,9 +410,9 @@ export function ParallaxHero() {
             <div className="h-[450px]">
               <DestinationCard
                 imageUrl="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=90"
-                location="Electric Nights"
+                location="Night Parties"
                 flag="🌙"
-                stats="Live DJs • Drone Shows • Fire Acts • Open Bar"
+                stats="Renowned DJs • Unique Venue • Different Party Each Night"
                 href="#nighttime"
                 themeColor="330 81% 60%"
               />
@@ -422,11 +422,11 @@ export function ParallaxHero() {
           {/* Bottom CTA */}
           <div className="text-center">
             <p className="text-white/35 mb-6 text-[13px] tracking-wide">
-              Limited tickets available for the inaugural event
+              Limited tickets available — don't miss the takeover
             </p>
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/[0.02] border border-white/[0.05]">
               <Calendar className="w-4 h-4 text-cyan-400/70" />
-              <span className="text-white/50 text-[13px] font-medium tracking-wide">9-10 October</span>
+              <span className="text-white/50 text-[13px] font-medium tracking-wide">10-11 October</span>
               <div className="w-px h-4 bg-white/[0.08]" />
               <MapPin className="w-4 h-4 text-cyan-400/70" />
               <span className="text-white/50 text-[13px] font-medium tracking-wide">Nicosia, Cyprus</span>

@@ -24,13 +24,13 @@ export function Footer() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-white text-lg">Cosmic Horizons</h3>
-                <p className="text-xs text-white/40">June 14-15, 2026</p>
+                <h3 className="font-bold text-white text-lg">Planetarium Festival</h3>
+                <p className="text-xs text-white/40">10-11 October, 2026</p>
               </div>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              The ultimate 2-day cosmic festival at the Cyprus Planetarium. 
-              Family fun by day, epic party by night.
+              The ultimate 2-day planetarium takeover by Memora Experience.
+              Kids zone, sports, dance & vendors by day — epic DJ parties by night.
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-white/60 text-sm">
                 <Mail className="w-4 h-4 text-violet-400" />
-                <span>info@cosmichorizons.cy</span>
+                <span>info@memora-experience.com</span>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-white/30">
-              © 2026 Cosmic Horizons. All rights reserved.
+              © 2026 Memora Experience. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-white/30">
               <a href="#" className="hover:text-white/50 transition-colors">Privacy</a>

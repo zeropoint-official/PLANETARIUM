@@ -16,8 +16,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cosmic Horizons | Cyprus Planetarium Event",
-  description: "Join us for an unforgettable night under the stars at Cyprus Planetarium. Experience live telescope observations, immersive dome shows, and expert talks about the cosmos.",
+  title: "Planetarium Festival | 10-11 October — Nicosia, Cyprus",
+  description: "Cyprus' ultimate 2-day takeover of the Planetarium. Kids zone, live sports, dance performances & vendor market by day — renowned DJs and epic parties by night. Organized by Memora Experience.",
 };
 
 export const viewport = {
