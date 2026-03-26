@@ -74,14 +74,15 @@ export function ParallaxHero() {
             <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
               <video
                 ref={videoRef}
-                src="/0326.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="auto"
                 className="w-full h-[120%] object-cover brightness-[0.65] saturate-[1.3] contrast-[1.1]"
-              />
+              >
+                <source src="https://pub-aa0fd8d68b214268a209deacc9084bf2.r2.dev/0326.mp4" type="video/mp4" />
+              </video>
               {/* Noise texture overlay - reduced opacity */}
               <div className="absolute inset-0 opacity-[0.015] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
             </div>
