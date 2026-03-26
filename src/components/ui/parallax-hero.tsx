@@ -12,6 +12,15 @@ import { DestinationCard } from '@/components/ui/card-21';
 
 export function ParallaxHero() {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.setAttribute('webkit-playsinline', '');
+    video.muted = true;
+    video.play().catch(() => {});
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -64,10 +73,12 @@ export function ParallaxHero() {
             {/* Layer 1: Video Background */}
             <div data-parallax-layer="1" className="absolute inset-0 will-change-transform">
               <video
+                ref={videoRef}
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="auto"
                 className="w-full h-[120%] object-cover brightness-[0.65] saturate-[1.3] contrast-[1.1]"
               >
                 <source src="https://pub-aa0fd8d68b214268a209deacc9084bf2.r2.dev/0326.mp4" type="video/mp4" />
