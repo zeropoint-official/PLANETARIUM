@@ -410,7 +410,7 @@ export function ParallaxHero() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12 max-w-5xl mx-auto">
             <div className="h-[450px]">
               <DestinationCard
-                imageUrl="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&auto=format&fit=crop&q=90"
+                imageUrl="/new-pics/kids-zone.png"
                 location="Daytime Experience"
                 flag="☀️"
                 stats="Kids Zone • Live Sports • Dance Shows • Vendor Market"
@@ -420,7 +420,7 @@ export function ParallaxHero() {
             </div>
             <div className="h-[450px]">
               <DestinationCard
-                imageUrl="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=90"
+                imageUrl="/new-pics/fire-performer.png"
                 location="Night Parties"
                 flag="🌙"
                 stats="Renowned DJs • Unique Venue • Different Party Each Night"

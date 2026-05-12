@@ -19,20 +19,20 @@ export default function Home() {
   ];
 
   const daytimeImages = [
-    // Central: VR Experience
-    'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=900&auto=format&fit=crop&q=80',
-    // Top-Left: Telescope viewing
-    'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=900&auto=format&fit=crop&q=80',
-    // Top-Right: Interactive exhibit
-    'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=900&auto=format&fit=crop&q=80',
-    // Bottom-Right: Workshop
-    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&auto=format&fit=crop&q=80',
-    // Far-Right: Kids activities
-    'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=900&auto=format&fit=crop&q=80',
-    // Bottom-Left: Gaming zone
-    'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
-    // Far-Left: Food & drinks
-    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&auto=format&fit=crop&q=80',
+    // Central: hero spotlight
+    '/new-pics/kids-zone.png',
+    // Top-Left
+    '/new-pics/lion-mascot.png',
+    // Top-Right
+    '/new-pics/climbing-wall.png',
+    // Bottom-Right
+    '/new-pics/bouncy-castle.png',
+    // Far-Right
+    '/new-pics/panda-mascots.png',
+    // Bottom-Left
+    '/new-pics/mini-cars.png',
+    // Far-Left
+    '/new-pics/food-service.png',
   ];
 
   // Event Timeline Data
@@ -69,23 +69,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80"
+              src="/new-pics/kids-zone.png"
               alt="Kids activities"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
             <img
-              src="https://images.unsplash.com/photo-1593508512255-86ab42a0e620?w=800&q=80"
-              alt="VR experience"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
-              alt="Street food"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&q=80"
-              alt="Dome projections"
+              src="/new-pics/lion-mascot.png"
+              alt="Family entertainment"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
           </div>
@@ -124,23 +114,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+              src="/new-pics/climbing-wall.png"
               alt="Sports demonstrations"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
             <img
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
-              alt="Workshops"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
-              alt="Vendor market"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80"
-              alt="Dance performances"
+              src="/new-pics/mechanical-bull.png"
+              alt="Active demos"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
           </div>
@@ -179,23 +159,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
-              alt="DJ party"
+              src="/new-pics/fire-dancers.png"
+              alt="Night performance"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
             <img
-              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
-              alt="Planetarium dome"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80"
+              src="/new-pics/robot-dog.png"
               alt="Night event"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1501281668745-f7f57525c1b4?w=800&q=80"
-              alt="Celebration"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
           </div>
@@ -234,23 +204,13 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80"
-              alt="Activities"
+              src="/new-pics/bouncy-castle.png"
+              alt="Kids zone returns"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
             <img
-              src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80"
-              alt="Entertainment"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
-              alt="Planetarium"
-              className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80"
-              alt="Closing party"
+              src="/new-pics/mini-cars.png"
+              alt="Closing night"
               className="rounded-lg object-cover h-32 md:h-44 lg:h-60 w-full border border-white/10"
             />
           </div>
@@ -281,7 +241,7 @@ export default function Home() {
       { id: 5, text: "Cash or card for vendors, food & drinks" },
       { id: 6, text: "The kids — it's a family-friendly daytime!" },
     ],
-    videoThumbnailUrl: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=900&auto=format&fit=crop&q=80",
+    videoThumbnailUrl: "/new-pics/fire-dancers.png",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?si=_MZFE2nm9fevcj76",
   };
 
