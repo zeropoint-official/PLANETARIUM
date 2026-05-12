@@ -160,8 +160,6 @@ export function ParallaxHero() {
                         <div className="relative rounded-full bg-[#0a0a18]/95 backdrop-blur-2xl px-6 py-3 flex items-center gap-2.5">
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
                           <span className="text-sm font-semibold text-white tracking-wide">Get Tickets</span>
-                          <div className="w-px h-4 bg-white/10" />
-                          <span className="text-xs text-violet-300/80 font-medium">€20</span>
                           <ArrowRight className="w-3.5 h-3.5 text-violet-400/80 flex-shrink-0" />
                         </div>
                       </div>
@@ -211,8 +209,6 @@ export function ParallaxHero() {
                         <div className="relative rounded-full bg-[#0a0a18]/90 backdrop-blur-2xl px-8 py-4 flex items-center gap-4 group-hover:bg-[#0a0a18]/80 transition-colors duration-300">
                           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
                           <span className="text-base font-semibold text-white tracking-wide">Get Tickets</span>
-                          <div className="w-px h-5 bg-white/10" />
-                          <span className="text-sm text-violet-300/80 font-medium">From €20</span>
                           <ArrowRight className="w-4 h-4 text-violet-400 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
                         </div>
                       </div>

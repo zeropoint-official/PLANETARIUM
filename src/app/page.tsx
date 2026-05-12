@@ -301,7 +301,7 @@ export default function Home() {
         {/* Ticket Purchase Section */}
         <section id="tickets" className="w-full py-20 px-4 relative">
           <div id="location" className="absolute -top-20" />
-          <div className="max-w-xl mx-auto">
+          <div className="max-w-4xl mx-auto">
 
             {/* Title */}
             <div className="text-center mb-12">
@@ -312,46 +312,89 @@ export default function Home() {
                 </AuroraText>
               </h2>
               <p className="text-base md:text-lg text-white/60 max-w-lg mx-auto">
-                Full access to all daytime activities — kids zone, sports, dance shows, vendor market & dome projections. Night party included.
+                Daytime is for everyone — kids zone, sports, dance & vendor market. Two unique nights, each with its own party and pricing.
               </p>
             </div>
 
-            {/* Single Ticket Card */}
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8">
+            {/* Pricing Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
-              {/* Pricing tiers */}
-              <div className="grid grid-cols-3 gap-3 mb-8">
-                <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                  <div className="text-3xl font-black text-white mb-1">€20</div>
-                  <div className="text-xs text-white/40">Adults<br/>18+</div>
+              {/* Daytime Pass */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 flex flex-col">
+                <div className="mb-6">
+                  <div className="text-xs text-violet-400/70 uppercase tracking-[0.2em] font-medium mb-2">Daytime</div>
+                  <h3 className="text-2xl font-black text-white">Full Day Pass</h3>
                 </div>
-                <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                  <div className="text-3xl font-black text-violet-400 mb-1">€5</div>
-                  <div className="text-xs text-white/40">Teens<br/>14–18</div>
+
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-2xl md:text-3xl font-black text-white mb-1">€12</div>
+                    <div className="text-xs text-white/40">12–88<br/>yrs</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-2xl md:text-3xl font-black text-violet-400 mb-1">€5</div>
+                    <div className="text-xs text-white/40">3–12<br/>yrs</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-2xl md:text-3xl font-black text-cyan-400 mb-1">Free</div>
+                    <div className="text-xs text-white/40">0–3<br/>yrs</div>
+                  </div>
                 </div>
-                <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                  <div className="text-3xl font-black text-cyan-400 mb-1">Free</div>
-                  <div className="text-xs text-white/40">Kids<br/>under 14</div>
-                </div>
+
+                <ul className="space-y-3">
+                  {[
+                    'Full daytime access — all zones & activities',
+                    'Kids zone, VR & immersive dome projections',
+                    'Live sports demonstrations & dance performances',
+                    'Vendor market, street food & drinks',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-white/70">
+                      <CheckCircle2 className="w-4 h-4 text-violet-400 mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Inclusions */}
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Full daytime access — all zones & activities',
-                  'Night party entry (18+)',
-                  'Kids zone, VR & immersive dome projections',
-                  'Live sports demonstrations & dance performances',
-                  'Vendor market, street food & drinks',
-                  'Children under 14 must be accompanied by a ticketed adult',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                    <CheckCircle2 className="w-4 h-4 text-violet-400 mt-0.5 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              {/* Night Parties */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 flex flex-col">
+                <div className="mb-6">
+                  <div className="text-xs text-fuchsia-400/70 uppercase tracking-[0.2em] font-medium mb-2">Night Parties</div>
+                  <h3 className="text-2xl font-black text-white">Two Unique Nights</h3>
+                </div>
 
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-2xl md:text-3xl font-black text-fuchsia-400 mb-1">€30</div>
+                    <div className="text-xs text-white/60 font-semibold mt-1">Luna Morata</div>
+                    <div className="text-[10px] text-white/30 uppercase tracking-wider mt-0.5">Night 1</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <div className="text-2xl md:text-3xl font-black text-cyan-400 mb-1">€20</div>
+                    <div className="text-xs text-white/60 font-semibold mt-1">Lego</div>
+                    <div className="text-[10px] text-white/30 uppercase tracking-wider mt-0.5">Night 2</div>
+                  </div>
+                </div>
+
+                <ul className="space-y-3">
+                  {[
+                    'Night party entry (18+, valid ID required)',
+                    'Renowned DJs in a one-of-a-kind venue',
+                    'Different lineup & vibe each night',
+                    'Tickets sold separately per night',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-white/70">
+                      <CheckCircle2 className="w-4 h-4 text-fuchsia-400 mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
+
+            {/* CTA */}
+            <div className="max-w-xl mx-auto">
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
@@ -361,6 +404,7 @@ export default function Home() {
                 Buy Tickets — Coming Soon
               </a>
               <p className="text-xs text-white/25 text-center mt-3">Online ticket sales opening soon</p>
+              <p className="text-xs text-white/35 text-center mt-2">Children under 14 must be accompanied by a ticketed adult</p>
             </div>
 
             {/* Bottom info */}
